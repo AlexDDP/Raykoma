@@ -11,10 +11,10 @@ public class BoatCollision : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();  // FIX -- -- Use Rigidbody2D instead of Rigidbody
-        if (collisionText != null)
-        {
-            collisionText.text = "Collisions: 0";
-        }
+        //if (collisionText != null)
+       // {
+           // collisionText.text = "Collisions: 0";
+       // }
     }
 
     void OnCollisionEnter2D(Collision2D collision)  // FIX -- -- Use OnCollisionEnter2D for 2D physics
