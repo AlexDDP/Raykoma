@@ -1,50 +1,43 @@
-//test!!!
 using UnityEngine;
 using TMPro;
 
 public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public int collisionCounter = 0;
+    private int lifeCount = 3;
     public TMP_Text collisionText;
-
-    public int PlayerScore = 0;
-
+    // initialises boatSprtie Change so i dont get stupid static error
+    private BoatSpriteChange boatSpriteChange;
     public TMP_Text Score;
-
-
-
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();  // FIX -- -- Use Rigidbody2D instead of Rigidbody
-        //if (collisionText != null)
-       // {
-           // collisionText.text = "Collisions: 0";
-       // }
+        rb = GetComponent<Rigidbody2D>();
+
+        // assigns it to the right class or something idk
+        boatSpriteChange = GetComponent<BoatSpriteChange>();
+
+        if (collisionText != null)
+        {
+            collisionText.text = "Life: " + lifeCount;
+        }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)  // FIX -- -- Use OnCollisionEnter2D for 2D physics
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Rock") == true)  
+        if (collision.gameObject.CompareTag("Rock"))
         {
-
-            collisionCounter++;
-            PlayerScore = PlayerScore - 20;
-            Debug.Log("Score is down by 20!");
+            lifeCount--;
+            if (lifeCount <= 0)
+            {
+                BoatController.moveSpeed = 0f;
+                boatSpriteChange.UpdateSprite(gameObject);
+            }
             
         }
             if (collisionText != null)
             {
-                collisionText.text = "Collisions: " + collisionCounter;
+                collisionText.text = "Life: " + lifeCount;
             }
-            if(Score != null) 
-            {
-                Score.text = "Score: " + PlayerScore;
-            }
-
-            //DEBUG LOG
-            Debug.Log("Collision detected! Total collisions: " + collisionCounter);
-
             rb.angularVelocity = 0f;
         }    
     
