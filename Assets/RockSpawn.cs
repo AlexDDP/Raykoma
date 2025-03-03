@@ -28,18 +28,27 @@ public class RockSpawner : MonoBehaviour
 
     void CheckAndSpawnRocks()
     {
-        
         if (boat.transform.position.x >= lastSpawnX + spawnDistance)
         {
             for (int i = 0; i < rocksPerSpawn; i++)
             {
                 float randomY = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
-                float randomOffsetX = Random.Range(-2f, 2f); 
+                float randomOffsetX = Random.Range(-2f, 2f);
                 Vector2 spawnPosition = new Vector2(boat.transform.position.x + spawnDistance + randomOffsetX, randomY);
-                Instantiate(rockPrefab, spawnPosition, Quaternion.identity);  
+
+                // Instantiate the rock
+                GameObject rock = Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
+
+                // Get the RockDespawn component from the rock and assign the boat reference
+                RockDespawn rockDespawn = rock.GetComponent<RockDespawn>();
+                if (rockDespawn != null)
+                {
+                    rockDespawn.boat = boat;  // Assign the boat reference dynamically
+                }
             }
 
-            lastSpawnX = boat.transform.position.x;  
+            lastSpawnX = boat.transform.position.x;
         }
     }
+
 }
