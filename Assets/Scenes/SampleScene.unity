@@ -311,6 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionText: {fileID: 2013927209}
+  Score: {fileID: 0}
 --- !u!114 &74101045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,6 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionText: {fileID: 2013927209}
+  Score: {fileID: 0}
 --- !u!114 &889635596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,6 +808,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boat: {fileID: 0}
   despawnDistance: 30
+--- !u!50 &889635599
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889635591}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &898860046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1327,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 889635596}
+    - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889635599}
   m_SourcePrefab: {fileID: 100100000, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
