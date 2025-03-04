@@ -49,6 +49,7 @@ public class RockSpawner : MonoBehaviour
 
             lastSpawnX = boat.transform.position.x;
         }
+        //if (boat.transform.position.x >= rockPrefab + spawnDistance)
     }
 
 }

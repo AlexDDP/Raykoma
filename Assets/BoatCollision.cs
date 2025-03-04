@@ -1,37 +1,46 @@
-//test!!!
 using UnityEngine;
 using TMPro;
 
 public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private int collisionCounter = 0;
+    private int lifeCount = 3;
     public TMP_Text collisionText;
-
+    // initialises boatSprtie Change so i dont get stupid static error
+    private BoatSpriteChange boatSpriteChange;
+    public TMP_Text Score;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();  // FIX -- -- Use Rigidbody2D instead of Rigidbody
-        //if (collisionText != null)
-       // {
-           // collisionText.text = "Collisions: 0";
-       // }
-    }
+        rb = GetComponent<Rigidbody2D>();
 
-    void OnCollisionEnter2D(Collision2D collision)  // FIX -- -- Use OnCollisionEnter2D for 2D physics
-    {
-        if (collision.gameObject.CompareTag("Rock"))  
+        // assigns it to the right class or something idk
+        boatSpriteChange = GetComponent<BoatSpriteChange>();
+
+        if (collisionText != null)
         {
-            collisionCounter++;
-
-            if (collisionText != null)
-            {
-                collisionText.text = "Collisions: " + collisionCounter;
-            }
-
-            //DEBUG LOG
-            Debug.Log("Collision detected! Total collisions: " + collisionCounter);
-
-            rb.angularVelocity = 0f;
+            collisionText.text = "Life: " + lifeCount;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Rock"))
+        {
+            lifeCount--;
+            if (lifeCount <= 0)
+            {
+                BoatController.moveSpeed = 0f;
+                boatSpriteChange.UpdateSprite(gameObject);
+            }
+            
+        }
+            if (collisionText != null)
+            {
+                collisionText.text = "Life: " + lifeCount;
+            }
+            rb.angularVelocity = 0f;
+        }    
+    
+    
 }
+
