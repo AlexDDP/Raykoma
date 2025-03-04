@@ -14,13 +14,8 @@ public class ScrollingBackground : MonoBehaviour
 
     void Update()
     {
-        
         float offset = Time.time * scrollSpeed;
-
-        
         transform.position = startPosition + new Vector3(offset, 0, 0);
-
-        
         if (transform.position.x >= width)
         {
             transform.position = startPosition;

@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 74101039}
   - component: {fileID: 74101043}
   - component: {fileID: 74101044}
+  - component: {fileID: 74101045}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -152,7 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3726f9e637eb3c145ba19457d7bac694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  time10s: 10
+  timeTilBoost: 0
 --- !u!50 &74101040
 Rigidbody2D:
   serializedVersion: 5
@@ -309,6 +311,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionText: {fileID: 2013927209}
+  Score: {fileID: 0}
+--- !u!114 &74101045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74101038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e9123d77e315a4fbbd114e8edac4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boatSprites:
+  - {fileID: -866949802918695352, guid: ad0b340dbd9d74d4b8fb27a0b19a3b96, type: 3}
+  - {fileID: 223657880964872364, guid: 6af488b8a29a3fe469d898a5f7275191, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +479,93 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 74101042}
   smoothing: 5
+--- !u!1 &524037918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 524037920}
+  - component: {fileID: 524037919}
+  m_Layer: 0
+  m_Name: boatOnFire_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!212 &524037919
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524037918}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -5111302927223850704, guid: 2eeb1d8fa503fb04eaeda41f5d4ea80b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 13.99, y: 9.84}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &524037920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524037918}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +793,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionText: {fileID: 2013927209}
+  Score: {fileID: 0}
+--- !u!114 &889635596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889635591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ccef956ad3e494c9c1ab76d2c19919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 0}
+  despawnDistance: 30
+--- !u!50 &889635599
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889635591}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &898860046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 'Life: 3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1097,7 +1244,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 42.07544, w: -118.28589}
+  m_margin: {x: 0, y: 0, z: -90.96878, w: -118.28589}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1177,6 +1324,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 889635595}
+    - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889635596}
+    - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889635599}
   m_SourcePrefab: {fileID: 100100000, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1190,3 +1343,4 @@ SceneRoots:
   - {fileID: 1556008978}
   - {fileID: 816385234}
   - {fileID: 898860050}
+  - {fileID: 524037920}
