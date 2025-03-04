@@ -792,6 +792,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionText: {fileID: 2013927209}
+--- !u!114 &889635596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889635591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ccef956ad3e494c9c1ab76d2c19919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 0}
+  despawnDistance: 30
 --- !u!1 &898860046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1295,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 889635595}
+    - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889635596}
   m_SourcePrefab: {fileID: 100100000, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
