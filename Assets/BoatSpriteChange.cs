@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class BoatSpriteChange : MonoBehaviour {
     [SerializeField] Sprite[] boatSprites;
     private Sprite curSprite;
