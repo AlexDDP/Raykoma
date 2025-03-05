@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 73c5121c29ae97b48bd9082dbd326e48
+guid: 672a99d5e431fc74e9c594f8e26e5980
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8964952642012861205
-    second: concept boat _0
+      213: 4595081958609607256
+    second: OIP_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: concept boat _0
+      name: OIP_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 12
-        width: 19
-        height: 44
+        x: 0
+        y: 0
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5135067fde8e96c70800000000000000
-      internalID: 8964952642012861205
+      spriteID: 85a5bb012b205cf30800000000000000
+      internalID: 4595081958609607256
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      concept boat _0: 8964952642012861205
+      OIP_0: 4595081958609607256
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
