@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 8cf8857a692245b46b0b271caea7559a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - crocodilePrefab: {fileID: 3463743540352784780, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
