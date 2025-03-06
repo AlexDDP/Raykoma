@@ -4,28 +4,27 @@ using TMPro;
 public class RockMovement : MonoBehaviour
 {
     public static float moveSpeed = 5f;  // Speed of the boat
-    public float speedMultiplier = 1.1f;
     private Rigidbody2D rb;
-    public float timer;
-    public float timeTilBoost = 5f;
+    public float time10s = 10f;
+    public float timeTilBoost;
 
 
     void Start()
     {
-        timer = timeTilBoost;
+        timeTilBoost = time10s;
         rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
     }
 
     void Update()
     {
-        if (timer > 0)
+        if (timeTilBoost > 0)
         {
-            timer -= Time.deltaTime;
+            timeTilBoost -= Time.deltaTime;
         }
-        if (timer <= 0 && moveSpeed < 10f)
+        if (timeTilBoost <= 0)
         {
-            timer = timeTilBoost;
-            moveSpeed = moveSpeed * speedMultiplier;
+            timeTilBoost = time10s;
+            moveSpeed = (float)(moveSpeed * 1.5);
         }
 
         Vector2 moveDirection = new Vector2(-1, 0).normalized;
