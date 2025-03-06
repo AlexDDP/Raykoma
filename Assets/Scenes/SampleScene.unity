@@ -355,11 +355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 158444926579df2478ab7637b214b580, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.593
+      value: -1.47
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 158444926579df2478ab7637b214b580, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.607
+      value: -0.98
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 158444926579df2478ab7637b214b580, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1175,9 +1175,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drag: {fileID: 0}
   timeTilExpand: 0
-  pivotPos: 0
-  prevPivot: 0
+  timer: 0
+  pivotPosX: 0
+  pivotPosY: 0
+  prevPivotX: 0
+  prevPivotY: 0
   spriteWidth: 0
+  spriteHeigth: 0
+  scaleIncreaseX: 0.25
+  scaleIncreaseY: 0.075
 --- !u!1 &1482865259
 GameObject:
   m_ObjectHideFlags: 0
