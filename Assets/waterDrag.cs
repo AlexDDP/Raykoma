@@ -18,9 +18,9 @@ public class waterDrag : MonoBehaviour
         timer = timeTilExpand;
         spriteWidth = GetComponent<SpriteRenderer>().bounds.size.x;
         spriteHeigth = GetComponent<SpriteRenderer>().bounds.size.y;
-        pivotPosX = -spriteWidth / 2; ;
+        pivotPosX = -spriteWidth / 2;
         prevPivotX = pivotPosX;
-        pivotPosY = -spriteHeigth / 2; ;
+        pivotPosY = -spriteHeigth / 2;
         prevPivotY = pivotPosY;
         drag = GetComponent<Rigidbody2D>(); 
     }
@@ -33,7 +33,7 @@ public class waterDrag : MonoBehaviour
             // finds sprite width after being scaled
             spriteWidth = GetComponent<SpriteRenderer>().bounds.size.x;
             spriteHeigth = GetComponent<SpriteRenderer>().bounds.size.y;
-            // calculation for where new pivot point should be (left side of kayak - half the width of sprite);
+            // calculation for where new pivot point should be (half the width of sprite);
             pivotPosX = -spriteWidth / 2;
             pivotPosY = -spriteHeigth / 2;
             // incrementing its position based on the difference of current and previous pivot positon
