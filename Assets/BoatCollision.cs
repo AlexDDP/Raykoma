@@ -28,6 +28,7 @@ public class BoatCollision : MonoBehaviour
                 boatSpriteChange.UpdateSprite(gameObject);
             }
             collisionText.text = "Life: " + lifeCount;
+            Destroy(collision.gameObject);
 
         }
 

@@ -16,21 +16,19 @@ public class BoatController : MonoBehaviour
 
     void Update()
     {
-        if (timeTilBoost > 0)
-        {
-            timeTilBoost -= Time.deltaTime;
-        }
-        if (timeTilBoost <= 0)
-        {
-            timeTilBoost = time10s;
-            moveSpeed = (float)(moveSpeed * 1.5);
-        }
-        float moveX = Input.GetAxis("Horizontal");  // A D Keys
+        //if (timeTilBoost > 0)
+        //{
+        //    timeTilBoost -= Time.deltaTime;
+        //}
+        //if (timeTilBoost <= 0)
+        //{
+        //    timeTilBoost = time10s;
+        //    moveSpeed = (float)(moveSpeed * 1.5);
+        //}
         float moveY = Input.GetAxis("Vertical");    // W S Keys
 
-        Vector2 moveDirection = new Vector2(1, moveY).normalized;
+        Vector2 moveDirection = new Vector2(0, moveY).normalized;
         Vector2 newVelocity = moveDirection * moveSpeed;
-
         rb.linearVelocity = newVelocity;  // Apply movement
 
         // Clamp the Y position, this stops kayak from going out of range

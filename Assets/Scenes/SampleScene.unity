@@ -837,6 +837,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &889635602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889635591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d75f9763d748ba43b77cee3d85f1233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time10s: 10
+  timeTilBoost: 0
+--- !u!114 &889635603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889635591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ae353cf18d36845bfcc07ee3e4b3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockPrefab: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+  spawnDistance: 15
+  spawnAreaMin: {x: 0, y: 0}
+  spawnAreaMax: {x: 0, y: 0}
+  rocksPerSpawn: 3
+  timeTilSpawn: 5
+  boat: {fileID: 74101038}
 --- !u!1 &898860046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,10 +1136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rockPrefab: {fileID: 889635591}
   spawnDistance: 15
-  spawnInterval: 2
   spawnAreaMin: {x: -5, y: -5}
   spawnAreaMax: {x: 5, y: 5}
   rocksPerSpawn: 3
+  timeTilSpawn: 5
   boat: {fileID: 74101038}
 --- !u!4 &1556008978
 Transform:
@@ -1317,8 +1350,8 @@ PrefabInstance:
       value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 4226384430343566238, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
-    - {fileID: 7184572116915216459, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1334,6 +1367,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 889635599}
+    - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889635602}
+    - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889635603}
   m_SourcePrefab: {fileID: 100100000, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

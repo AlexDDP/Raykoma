@@ -4,37 +4,27 @@ public class RockSpawner : MonoBehaviour
 {
     public GameObject rockPrefab;  
     public float spawnDistance = 15f;  
-    public float spawnInterval = 2f;  
     public Vector2 spawnAreaMin;  
     public Vector2 spawnAreaMax; 
-    public int rocksPerSpawn = 3; 
-
+    public int rocksPerSpawn = 3;
+    public float timeTilSpawn = 5.0f;
     public GameObject boat; 
-
-    private float lastSpawnX;
 
     void Start()
     {
-        
-        if (boat == null)
-        {
-            Debug.LogError("Boat reference is not assigned in RockSpawner!");
-            return;
-        }
-
-        lastSpawnX = boat.transform.position.x;
-        InvokeRepeating("CheckAndSpawnRocks", 0f, spawnInterval);  
+        timeTilSpawn = 5.0f;
     }
 
-    void CheckAndSpawnRocks()
+    void Update()
     {
-        if (boat.transform.position.x >= lastSpawnX + spawnDistance)
+        if (timeTilSpawn < 0.0f)
         {
+            Debug.Log("Spawn");
             for (int i = 0; i < rocksPerSpawn; i++)
             {
                 float randomY = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
                 float randomOffsetX = Random.Range(-2f, 2f);
-                Vector2 spawnPosition = new Vector2(boat.transform.position.x + spawnDistance + randomOffsetX, randomY);
+                Vector2 spawnPosition = new Vector2(spawnDistance + randomOffsetX, randomY);
 
                 // Instantiate the rock
                 GameObject rock = Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
@@ -46,10 +36,12 @@ public class RockSpawner : MonoBehaviour
                     rockDespawn.boat = boat;  // Assign the boat reference dynamically
                 }
             }
-
-            lastSpawnX = boat.transform.position.x;
+            timeTilSpawn = 5.0f;
         }
-        //if (boat.transform.position.x >= rockPrefab + spawnDistance)
+        else
+        {
+            timeTilSpawn -= Time.deltaTime;
+        }
     }
 
 }
