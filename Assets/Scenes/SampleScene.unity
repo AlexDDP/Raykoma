@@ -313,7 +313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeCount: 3
   collisionText: {fileID: 2013927209}
-  Score: {fileID: 0}
 --- !u!114 &74101045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,7 +871,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeCount: 3
   collisionText: {fileID: 2013927209}
-  Score: {fileID: 0}
 --- !u!114 &889635596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,8 +926,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time10s: 10
   timeTilBoost: 0
-  scoreText: {fileID: 1482865261}
-  score: 0
 --- !u!1 &898860046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1191,7 @@ GameObject:
   - component: {fileID: 1482865260}
   - component: {fileID: 1482865262}
   - component: {fileID: 1482865261}
+  - component: {fileID: 1482865263}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1218,7 +1215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 781, y: 466}
+  m_AnchoredPosition: {x: 784, y: 474}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482865261
@@ -1322,6 +1319,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482865259}
   m_CullTransparentMesh: 1
+--- !u!114 &1482865263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482865259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340d0ccd902d0c74b83b0912eeb1cecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1482865261}
+  score: 0
+  timeTilUpdate: 0.1
+  timer: 0
 --- !u!1 &1556008976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1370,7 @@ MonoBehaviour:
   spawnAreaMax: {x: 5, y: 5}
   rocksPerSpawn: 3
   timeTilSpawn: 5
+  timer: 0
   boat: {fileID: 74101038}
 --- !u!4 &1556008978
 Transform:
@@ -1520,11 +1534,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 498489598523632854, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.33
+      value: 5.36
       objectReference: {fileID: 0}
     - target: {fileID: 498489598523632854, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.85
+      value: -6.32
       objectReference: {fileID: 0}
     - target: {fileID: 498489598523632854, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       propertyPath: m_LocalPosition.z

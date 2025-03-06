@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-public class waterDrag : MonoBehaviour
+public class WaterDrag : MonoBehaviour
 {   
     public Rigidbody2D drag;
     public float timeTilExpand = 0.3f;
@@ -13,6 +14,7 @@ public class waterDrag : MonoBehaviour
     public float spriteHeigth;
     public float scaleIncreaseX = 0.25f;
     public float scaleIncreaseY = 0.075f;
+    public static Boolean terminate = false;
     private void Start()
     {
         timer = timeTilExpand;
@@ -26,7 +28,11 @@ public class waterDrag : MonoBehaviour
     }
     private void Update()
     {
-        if(timer <= 0)
+        if (terminate)
+        {
+            transform.localScale = new Vector3(0, 0, 0);
+        }
+        if(timer <= 0 && !terminate)
         {
             // makes drag longer
             transform.localScale += new Vector3(scaleIncreaseX, scaleIncreaseY, 0f);

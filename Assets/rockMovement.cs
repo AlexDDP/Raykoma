@@ -7,13 +7,10 @@ public class RockMovement : MonoBehaviour
     private Rigidbody2D rb;
     public float time10s = 10f;
     public float timeTilBoost;
-    public TMP_Text scoreText;
-    public int score;
 
 
     void Start()
     {
-        score = 0;
         timeTilBoost = time10s;
         rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
     }
@@ -26,16 +23,12 @@ public class RockMovement : MonoBehaviour
         }
         if (timeTilBoost <= 0)
         {
-            score += 100;
-            scoreText.text = "Score: "  + score;
             timeTilBoost = time10s;
             moveSpeed = (float)(moveSpeed * 1.5);
         }
-        float moveX = Input.GetAxis("Horizontal");  // A D Keys
 
         Vector2 moveDirection = new Vector2(-1, 0).normalized;
         Vector2 newVelocity = moveDirection * moveSpeed;
-
         rb.linearVelocity = newVelocity;  // Apply movement
     }
 }
