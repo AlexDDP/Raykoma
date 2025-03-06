@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Water_scaled_31x_pngcrushed_0: -6118177859242726815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

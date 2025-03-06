@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      two roks_scaled_1x_pngcrushed_0: 7109317854057119423
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

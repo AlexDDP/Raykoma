@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Crocodile_scaled_9x_pngcrushed_0: -706294666170919378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
