@@ -28,7 +28,7 @@ public class BoatController : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");  // A D Keys
         float moveY = Input.GetAxis("Vertical");    // W S Keys
 
-        Vector2 moveDirection = new Vector2(moveX, moveY).normalized;
+        Vector2 moveDirection = new Vector2(1, moveY).normalized;
         Vector2 newVelocity = moveDirection * moveSpeed;
 
         rb.linearVelocity = newVelocity;  // Apply movement
