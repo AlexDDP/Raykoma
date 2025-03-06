@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65df13f90999a57428eba885e6ed4615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeCount: 3
   collisionText: {fileID: 2013927209}
   Score: {fileID: 0}
 --- !u!114 &74101045
@@ -792,6 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65df13f90999a57428eba885e6ed4615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeCount: 3
   collisionText: {fileID: 2013927209}
   Score: {fileID: 0}
 --- !u!114 &889635596
@@ -1314,7 +1316,9 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Rock
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4226384430343566238, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+    - {fileID: 7184572116915216459, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
