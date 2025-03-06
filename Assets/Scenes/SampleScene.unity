@@ -851,25 +851,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time10s: 10
   timeTilBoost: 0
---- !u!114 &889635603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889635591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66ae353cf18d36845bfcc07ee3e4b3c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rockPrefab: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
-  spawnDistance: 15
-  spawnAreaMin: {x: 0, y: 0}
-  spawnAreaMax: {x: 0, y: 0}
-  rocksPerSpawn: 3
-  timeTilSpawn: 5
-  boat: {fileID: 74101038}
 --- !u!1 &898860046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,11 +1284,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 498489598523632854, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.33
+      value: 6.33
       objectReference: {fileID: 0}
     - target: {fileID: 498489598523632854, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.14
+      value: -2.85
       objectReference: {fileID: 0}
     - target: {fileID: 498489598523632854, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1370,9 +1351,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 889635602}
-    - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 889635603}
   m_SourcePrefab: {fileID: 100100000, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
