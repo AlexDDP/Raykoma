@@ -28,7 +28,6 @@ public class BoatCollision : MonoBehaviour
                 RockSpawner.spawnRocks = false;
                 RockMovement.moveSpeed = 0f;
                 BoatController.moveSpeed = 0f;
-                boatSpriteChange.UpdateSprite(gameObject);
             }
             collisionText.text = "Life: " + lifeCount;
             Destroy(collision.gameObject);
