@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 
 public class BoatCollision : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class BoatCollision : MonoBehaviour
                 RockSpawner.spawnRocks = false;
                 RockMovement.moveSpeed = 0f;
                 BoatController.moveSpeed = 0f;
+                ScrollingBackground.scrollSpeed = 0f;
             }
             collisionText.text = "Life: " + lifeCount;
             Destroy(collision.gameObject);

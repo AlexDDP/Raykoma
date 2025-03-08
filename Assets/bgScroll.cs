@@ -4,7 +4,7 @@ public class ScrollingBackground : MonoBehaviour
 {
     public GameObject background1;  // First background tile
     public GameObject background2;  // Second background tile
-    public float scrollSpeed = 5f;  // Speed at which the background scrolls
+    public static float scrollSpeed = 5f;  // Speed at which the background scrolls
     public float tileWidth = 19.8f;   // Width of one background tile (adjust based on your texture)
 
     void Update()
