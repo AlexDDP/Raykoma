@@ -1,64 +1,42 @@
-using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class NPCRacer : MonoBehaviour
 {
-    Rigidbody2D rb2D;
-    public int direction = 0;
+    private Rigidbody2D rb;
+    public float moveSpeed = 2f;   // Speed of NPC movement
+    public float laserLength = 5f; // Raycast detection distance
+    public float dodgeSpeed = UnityEngine.Random.Range(2,-2);  // Speed of dodging
 
-    public float upperLimit = 5f; // Set these based on your screen
-    public float lowerLimit = -5f;
-    public float minX = -1f; // Left boundary for X movement
-    public float maxX = 1f;  // Right boundary for X movement
-    public float xMoveSpeed = 2f; // Speed for random forward/backward movement
+    public float upperLimit = 4.5f; // Adjust based on your scene size
+    public float lowerLimit = -4.5f;
 
     void Start()
     {
-        rb2D = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); // Assign Rigidbody2D at start
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
-        // Check for obstacles
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right,10f);  // Raycast to the right
+        //Get the first object hit by the ray
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, laserLength);
 
-        if (hit)
+        //If the collider of the object hit is not NUll
+        if (hit.collider != null)
         {
-            direction = -2;  // Set direction for dodging
-            transform.position += Vector3.up * direction * Time.deltaTime;
+            rb.linearVelocity = new Vector2(0, -dodgeSpeed);
+            //Hit something, print the tag of the object
+            Debug.Log("Hitting: " + hit.collider.tag);
         }
 
+        //Method to draw the ray in scene for debug purpose
+        Debug.DrawRay(transform.position, Vector2.right * laserLength, Color.red);
 
-
-        // **Clamp NPC position to stay within screen bounds**
+        // Clamp NPC position within screen bounds
         float clampedY = Mathf.Clamp(transform.position.y, lowerLimit, upperLimit);
         transform.position = new Vector3(transform.position.x, clampedY, transform.position.z);
-
-    }
-
-    void OnTriggerEnter2D(UnityEngine.Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Rock"))
-        {
-            // Destroy the rock after a delay
-            Destroy(collision.gameObject);
-
-        }
-    }
-
-    // **NPC Avoids Player When Too Close**
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Player")) // Check if the player is nearby
-        {
-            //float avoidanceDirection = (Random.value > 0.5f) ? 1 : -2; // Move left or right randomly
-            //Vector3 newPosition = transform.position + new Vector3(avoidanceDirection * xMoveSpeed * Time.deltaTime, 0, 0);
-
-            // Clamp X position so NPC doesn't move off-screen
-            //newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
-            //transform.position = newPosition;
-        }
     }
 }
