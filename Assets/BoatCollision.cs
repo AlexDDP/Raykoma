@@ -6,15 +6,11 @@ using Unity.VisualScripting;
 public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public int lifeCount = 3;
-    public TMP_Text collisionText;
-    // initialises boatSprtie Change so i dont get stupid static error
-    private BoatSpriteChange boatSpriteChange;
+    public static int lifeCount = 3;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // assigns it to the right class or something idk
-        boatSpriteChange = GetComponent<BoatSpriteChange>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -31,7 +27,6 @@ public class BoatCollision : MonoBehaviour
                 BoatController.moveSpeed = 0f;
                 ScrollingBackground.scrollSpeed = 0f;
             }
-            collisionText.text = "Life: " + lifeCount;
             Destroy(collision.gameObject);
         }
 
