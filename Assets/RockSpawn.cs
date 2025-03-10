@@ -7,7 +7,7 @@ public class RockSpawner : MonoBehaviour
     public static Boolean spawnRocks;
     public float spawnDistance = 15f;
     public float spawnMin = -4.5f;
-    public float spawnTop = 0;
+    public float spawnTop = 0f;
     public float yInc = 4.5f;
     public int rocksPerSpawn;
     public float timeTilSpawn = 5.0f;

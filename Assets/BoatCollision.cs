@@ -7,8 +7,10 @@ public class BoatCollision : MonoBehaviour
     private Rigidbody2D rb;
     public int lifeCount = 3;
     public TMP_Text collisionText;
+    public TMP_Text Coins;
     // initialises boatSprtie Change so i dont get stupid static error
     private BoatSpriteChange boatSpriteChange;
+    public int playerCoins = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,7 +34,11 @@ public class BoatCollision : MonoBehaviour
             collisionText.text = "Life: " + lifeCount;
             Destroy(collision.gameObject);
         }
-
+        if(collision.gameObject.CompareTag("Coin")) 
+        {
+            playerCoins++;
+            Coins.text = "Coins: " + playerCoins;
+        }
         //marwans line of code(uknknown purpose but it works)
             rb.angularVelocity = 0f;
         }
