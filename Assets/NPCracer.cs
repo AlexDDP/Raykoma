@@ -53,12 +53,12 @@ public class NPCRacer : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Check if the player is nearby
         {
-            float avoidanceDirection = (Random.value > 0.5f) ? 1 : -2; // Move left or right randomly
-            Vector3 newPosition = transform.position + new Vector3(avoidanceDirection * xMoveSpeed * Time.deltaTime, 0, 0);
+            //float avoidanceDirection = (Random.value > 0.5f) ? 1 : -2; // Move left or right randomly
+            //Vector3 newPosition = transform.position + new Vector3(avoidanceDirection * xMoveSpeed * Time.deltaTime, 0, 0);
 
             // Clamp X position so NPC doesn't move off-screen
-            newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
-            transform.position = newPosition;
+            //newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
+            //transform.position = newPosition;
         }
     }
 }

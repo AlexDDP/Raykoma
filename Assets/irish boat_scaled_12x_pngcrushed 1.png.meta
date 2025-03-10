@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      irish boat_scaled_12x_pngcrushed 1_0: 636163207994489355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
