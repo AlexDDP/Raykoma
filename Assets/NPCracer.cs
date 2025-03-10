@@ -8,7 +8,7 @@ public class NPCRacer : MonoBehaviour
     private Rigidbody2D rb;
     public float moveSpeed = 2f;   // Speed of NPC movement
     public float laserLength = 5f; // Raycast detection distance
-    public float dodgeSpeed = UnityEngine.Random.Range(2,-2);  // Speed of dodging
+    public float dodgeSpeed = 2f;  // Speed of dodging
 
     public float upperLimit = 4.5f; // Adjust based on your scene size
     public float lowerLimit = -4.5f;
