@@ -5,16 +5,18 @@ public class RockSpawner : MonoBehaviour
 {
     public GameObject rockPrefab;
     public static Boolean spawnRocks;
-    public float spawnDistance = 15f;  
-    public Vector2 spawnAreaMin;  
-    public Vector2 spawnAreaMax; 
-    public int rocksPerSpawn = 3;
+    public float spawnDistance = 15f;
+    public float spawnMin = -4.5f;
+    public float spawnTop = 0;
+    public float yInc = 4.5f;
+    public int rocksPerSpawn;
     public float timeTilSpawn = 5.0f;
     public float timer;
-    public GameObject boat; 
+    public GameObject boat;
 
     void Start()
     {
+        rocksPerSpawn = 2;
         timer = timeTilSpawn;
         spawnRocks = true;
     }
@@ -23,10 +25,13 @@ public class RockSpawner : MonoBehaviour
     {
         if (timer < 0.0f && spawnRocks)
         {
+            spawnTop = 0f;
+            spawnMin = -4.5f;
+
             for (int i = 0; i < rocksPerSpawn; i++)
             {
-                float randomY = UnityEngine.Random.Range(spawnAreaMin.y, spawnAreaMax.y);
-                float randomOffsetX = UnityEngine.Random.Range(-2f, 2f);
+                float randomY = UnityEngine.Random.Range(spawnMin, spawnTop);
+                float randomOffsetX = UnityEngine.Random.Range(-3f, 5f);
                 Vector2 spawnPosition = new Vector2(spawnDistance + randomOffsetX, randomY);
 
                 // Instantiate the rock
@@ -35,12 +40,13 @@ public class RockSpawner : MonoBehaviour
                 // Get the RockDespawn component from the rock and assign the boat reference
                 RockDespawn rockDespawn = rock.GetComponent<RockDespawn>();
                 if (rockDespawn != null)
-                {
                     rockDespawn.boat = boat;  // Assign the boat reference dynamically
-                }
+
+                spawnMin += yInc;
+                spawnTop += yInc;
             }
-            if(timeTilSpawn > 1.6f) timeTilSpawn-=0.2f;
-            timer = timeTilSpawn;
+            if (timeTilSpawn > 2f) timeTilSpawn -= 0.2f;
+            timer = UnityEngine.Random.Range(1f, timeTilSpawn);
         }
         else
         {
