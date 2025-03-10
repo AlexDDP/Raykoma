@@ -399,8 +399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65df13f90999a57428eba885e6ed4615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeCount: 3
-  collisionText: {fileID: 2013927209}
 --- !u!114 &74101046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,8 +1086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65df13f90999a57428eba885e6ed4615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeCount: 3
-  collisionText: {fileID: 2013927209}
 --- !u!114 &889635596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1361,6 +1357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background1: {fileID: 206395900}
   background2: {fileID: 37746982}
+  background3: {fileID: 206395900}
   tileWidth: 19.8
 --- !u!4 &996811905
 Transform:
@@ -1528,6 +1525,7 @@ MonoBehaviour:
   spriteHeigth: 0
   scaleIncreaseX: 0.25
   scaleIncreaseY: 0.075
+  maxHeight: 0
 --- !u!1 &1482865259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,10 +1677,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340d0ccd902d0c74b83b0912eeb1cecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highScore: 0
   scoreText: {fileID: 1482865261}
+  highScoreText: {fileID: 0}
   score: 0
   timeTilUpdate: 0.1
   timer: 0
+  playerName: 
+  scoreTextString: 
 --- !u!1 &1515026331
 GameObject:
   m_ObjectHideFlags: 0
@@ -6547,8 +6549,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rockPrefab: {fileID: 889635591}
   spawnDistance: 15
-  spawnAreaMin: {x: -5, y: -5}
-  spawnAreaMax: {x: 5, y: 5}
+  spawnMin: -4.5
+  spawnTop: 0
+  yInc: 4.5
   rocksPerSpawn: 3
   timeTilSpawn: 5
   timer: 0
@@ -6744,12 +6747,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b69494c4124294185c35ede53313c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  moveSpeed: 2
+  laserLength: 5
+  dodgeSpeed: 2
   upperLimit: 4
   lowerLimit: -4
-  minX: -15
-  maxX: 10
-  xMoveSpeed: 2
 --- !u!1 &2013927207
 GameObject:
   m_ObjectHideFlags: 0
