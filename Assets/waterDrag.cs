@@ -14,6 +14,7 @@ public class WaterDrag : MonoBehaviour
     public float spriteHeigth;
     public float scaleIncreaseX = 0.25f;
     public float scaleIncreaseY = 0.075f;
+    public Boolean maxHeight = false;
     public static Boolean terminate = false;
     private void Start()
     {
@@ -32,7 +33,7 @@ public class WaterDrag : MonoBehaviour
         {
             transform.localScale = new Vector3(0, 0, 0);
         }
-        if(timer <= 0 && !terminate)
+        if(timer <= 0 && !terminate && !maxHeight)
         {
             // makes drag longer
             transform.localScale += new Vector3(scaleIncreaseX, scaleIncreaseY, 0f);
@@ -48,6 +49,10 @@ public class WaterDrag : MonoBehaviour
             prevPivotX = pivotPosX;
             prevPivotY = pivotPosY;
             timer = 0.3f;
+            if(transform.localScale.x > 49)
+            {
+                maxHeight = true;
+            }
         }
         else
         {

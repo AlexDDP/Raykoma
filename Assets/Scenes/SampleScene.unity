@@ -474,7 +474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 158444926579df2478ab7637b214b580, type: 3}
       propertyPath: m_LocalScale.x
-      value: 41.8504
+      value: 42.37
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 158444926579df2478ab7637b214b580, type: 3}
       propertyPath: m_LocalScale.y
@@ -486,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 158444926579df2478ab7637b214b580, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.81
+      value: -1.27
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 158444926579df2478ab7637b214b580, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1493,6 +1493,7 @@ MonoBehaviour:
   spriteHeigth: 0
   scaleIncreaseX: 0.25
   scaleIncreaseY: 0.075
+  maxHeight: 0
 --- !u!1 &1482865259
 GameObject:
   m_ObjectHideFlags: 0

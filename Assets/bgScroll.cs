@@ -5,16 +5,17 @@ public class ScrollingBackground : MonoBehaviour
     public GameObject background1;  // First background tile
     public GameObject background2;  // Second background tile
     public GameObject background3;  // Second background tile
-    public static float scrollSpeed = 5f;  // Speed at which the background scrolls
+    public static float scrollSpeed;  // Speed at which the background scrolls
     public float tileWidth;   // Width of one background tile (adjust based on your texture)
 
     private void Start()
     {
         tileWidth = 19.7f;
+        scrollSpeed = RockMovement.moveSpeed;
     }
     void Update()
     {
-
+        scrollSpeed = RockMovement.moveSpeed;
         // Move both background tiles to the left
         background1.transform.position += Vector3.left * scrollSpeed * Time.deltaTime;
         background2.transform.position += Vector3.left * scrollSpeed * Time.deltaTime;
