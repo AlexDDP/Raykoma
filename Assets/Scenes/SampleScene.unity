@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 37746982}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.8, y: 0, z: 5}
+  m_LocalPosition: {x: 19.67, y: 0, z: 5}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   background1: {fileID: 206395900}
   background2: {fileID: 37746982}
   background3: {fileID: 1676917105}
-  tileWidth: 19.8
+  tileWidth: 19.7
 --- !u!4 &996811905
 Transform:
   m_ObjectHideFlags: 0
@@ -6616,7 +6616,7 @@ Transform:
   m_GameObject: {fileID: 1676917105}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.59, y: 0, z: 5}
+  m_LocalPosition: {x: 39.4, y: 0, z: 5}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
