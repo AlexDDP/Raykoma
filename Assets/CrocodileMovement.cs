@@ -1,51 +1,62 @@
-//using UnityEngine;
+using UnityEngine;
 
-//public class CrocodileMovement : MonoBehaviour
-//{
-//    public float moveSpeed = 1f;    
-//    public float moveRange = 3f;    
-//    private float startY;
+public class CrocodileMovement : MonoBehaviour
+{
+    public static float moveSpeed = 3f;  // Speed of the crocodile
+    private Rigidbody2D rb;
+    public float time10s = 10f;
+    public float timeTilBoost;
+    private bool movingUp = true;
 
-//    private float lifetime = 5f;  
-//    private float timeRemaining;
+    void Start()
+    {
+        timeTilBoost = time10s;
+        rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
+    }
 
-//    private Rigidbody2D rb;
+    void Update()
+    {
+        // Increase speed every 10 seconds
+        if (timeTilBoost > 0)
+        {
+            timeTilBoost -= Time.deltaTime;
+        }
+        if (timeTilBoost <= 0 && moveSpeed < 7f)  // Max speed limit
+        {
+            timeTilBoost = time10s;
+            moveSpeed *= 1.2f;
+        }
 
-//    void Start()
-//    {
-//        startY = transform.position.y;
-//        timeRemaining = lifetime;
-//        rb = GetComponent<Rigidbody2D>();
-//    }
+        // Move left in X and oscillate up/down in Y
+        float moveX = -1;  // Moves left
+        float moveY = movingUp ? 0.5f : -0.5f;  // Moves up and down
 
-//    void Update()
-//    {
-//        // Move the crocodile up and down using sine wave, trick i found online
-//        float newY = Mathf.Sin(Time.time * moveSpeed) * moveRange + startY;
-//        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        Vector2 moveDirection = new Vector2(moveX, moveY).normalized;
+        Vector2 newVelocity = moveDirection * moveSpeed;
+        rb.velocity = newVelocity;
 
-//        // Countdown
-//        timeRemaining -= Time.deltaTime;
+        // Change direction in Y after a certain range
+        if (transform.position.y > 2f) movingUp = false;
+        if (transform.position.y < -2f) movingUp = true;
+    }
 
-//        // Destroy the crocodile when the timer runs out
-//        if (timeRemaining <= 0)
-//        {
-//            Destroy(gameObject);  // Destroy the crocodile after the timer expires
-//        }
-//    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            BoatCollision.lifeCount--; // Reduce player life
 
-//    void OnCollisionEnter2D(Collision2D collision)
-//    {
-       
-//        if (collision.gameObject.CompareTag("Boat"))
-//        {
-            
-//            BoatCollision boatCollision = collision.gameObject.GetComponent<BoatCollision>();
-//            if (boatCollision != null)
-//            {
-//                boatCollision.lifeCount--;  // Reduce life
-//                Destroy(gameObject);  // Destroy the crocodile
-//            }
-//        }
-//    }
-//}
+            if (BoatCollision.lifeCount <= 0)
+            {
+                ScoreUpdate.gameEnded = true;
+                WaterDrag.terminate = true;
+                RockSpawner.spawnRocks = false;
+                RockMovement.moveSpeed = 0f;
+                BoatController.moveSpeed = 0f;
+                ScrollingBackground.scrollSpeed = 0f;
+            }
+
+            Destroy(gameObject); // Remove crocodile after collision
+        }
+    }
+}
