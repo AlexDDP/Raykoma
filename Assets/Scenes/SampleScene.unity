@@ -334,7 +334,7 @@ Transform:
   m_GameObject: {fileID: 74101038}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: -5, y: 0, z: 2}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1780,10 +1780,11 @@ MonoBehaviour:
   highScore: 0
   scoreText: {fileID: 1482865261}
   highScoreText: {fileID: 2059279274}
-  highScoreManager: {fileID: 0}
   score: 0
   timeTilUpdate: 0.1
   timer: 0
+  playerName: 
+  scoreTextString: 
 --- !u!1 &1515026331
 GameObject:
   m_ObjectHideFlags: 0
