@@ -15,7 +15,7 @@ public class HeartChange : MonoBehaviour
 
     public void Update()
     {
-        life = BoatCollision.lifeCount;
+        life = Mathf.Max(BoatCollision.lifeCount, 0);
         spriteRenderer.sprite = heartSprites[life];
     }
 }

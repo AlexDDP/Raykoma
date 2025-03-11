@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 High Score: 365 got by Alex
+=======
+High Score: 587 got by Dell
+>>>>>>> main
