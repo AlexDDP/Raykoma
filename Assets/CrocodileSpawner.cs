@@ -1,60 +1,24 @@
-using System.Collections;
 using UnityEngine;
 
 public class CrocodileSpawner : MonoBehaviour
 {
-    public GameObject crocodilePrefab; // Reference to the crocodile prefab
-    public float minSpawnInterval = 2f; // Minimum spawn interval
-    public float maxSpawnInterval = 5f; // Maximum spawn interval
+    public GameObject crocodilePrefab; 
+    public float spawnInterval = 3f;  
+    public float spawnRangeX = 5f;    
+    public float spawnHeight = 4f;    
 
-    private RockMovement rockMovement; // Reference to RockMovement script
-
-    void Start()
+    private void Start()
     {
-        // Find the RockMovement script in the scene
-        rockMovement = FindObjectOfType<RockMovement>();
-
-        if (rockMovement == null)
-        {
-            Debug.LogError("RockMovement script not found in the scene!");
-        }
-
-        // Start the spawn coroutine
-        StartCoroutine(SpawnCrocodiles());
+        InvokeRepeating("SpawnCrocodile", 0f, spawnInterval);
     }
 
-    IEnumerator SpawnCrocodiles()
+    void SpawnCrocodile()
     {
-        while (true)
-        {
-         
-            yield return new WaitForSeconds(Random.Range(minSpawnInterval, maxSpawnInterval));
+        float spawnX = Random.Range(-spawnRangeX, spawnRangeX);
+        float spawnY = Random.Range(-spawnHeight, spawnHeight);
+        Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0f);
 
-
-            Vector3 spawnPosition = GetRandomSpawnPosition();
-
-            
-            GameObject crocodile = Instantiate(crocodilePrefab, spawnPosition, Quaternion.identity);
-            CrocodileMovement crocodileMovementScript = crocodile.GetComponent<CrocodileMovement>();
-
-            if (crocodileMovementScript != null && rockMovement != null)
-            {
-
-                crocodileMovementScript.moveSpeed = RockMovement.moveSpeed;
-            }
-        }
-    }
-
-    // Get a random spawn position within the camera's view, idk why this is needeed 
-    Vector3 GetRandomSpawnPosition()
-    {
-        Camera camera = Camera.main;
-        float cameraWidth = camera.orthographicSize * camera.aspect;
-        float cameraHeight = camera.orthographicSize * 2;
-
-        float spawnX = Random.Range(-cameraWidth, cameraWidth);
-        float spawnY = Random.Range(-cameraHeight / 2, cameraHeight / 2);
-
-        return new Vector3(spawnX, spawnY, 0f);
+        // instantiate 
+        Instantiate(crocodilePrefab, spawnPosition, Quaternion.identity);
     }
 }
