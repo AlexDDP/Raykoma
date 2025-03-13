@@ -21,10 +21,10 @@ public class RockMovement : MonoBehaviour
         {
             timeTilBoost -= Time.deltaTime;
         }
-        if (timeTilBoost <= 0)
+        if (timeTilBoost <= 0 && moveSpeed < 9f)
         {
             timeTilBoost = time10s;
-            moveSpeed = (float)(moveSpeed * 1.5);
+            moveSpeed = (float)(moveSpeed * 1.2);
         }
 
         Vector2 moveDirection = new Vector2(-1, 0).normalized;

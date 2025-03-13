@@ -9,13 +9,11 @@ public class CrocodileSpawner : MonoBehaviour
 
     private void Start()
     {
-       
         InvokeRepeating("SpawnCrocodile", 0f, spawnInterval);
     }
 
     void SpawnCrocodile()
     {
-        
         float spawnX = Random.Range(-spawnRangeX, spawnRangeX);
         float spawnY = Random.Range(-spawnHeight, spawnHeight);
         Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0f);
