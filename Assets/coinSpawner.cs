@@ -16,7 +16,7 @@ public class coinSpawner : MonoBehaviour
 
     void Start()
     {
-        coinsPerSpawn = 2;
+        coinsPerSpawn = 1;
         timer = timeTilSpawn;
         spawnCoins = true;
     }
