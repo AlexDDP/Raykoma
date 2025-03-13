@@ -25,7 +25,7 @@ public class BoatCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Rock"))
+        if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
             lifeCount--;
             if (lifeCount <= 0)

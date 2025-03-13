@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Rock
   - Obstacles
-  - Coin
   layers:
   - Default
   - TransparentFX
