@@ -33,7 +33,7 @@ public class CrocodileMovement : MonoBehaviour
 
         Vector2 moveDirection = new Vector2(moveX, moveY).normalized;
         Vector2 newVelocity = moveDirection * moveSpeed;
-        rb.velocity = newVelocity;
+        rb.linearVelocity = newVelocity;
 
         // Change direction in Y after a certain range
         if (transform.position.y > 2f) movingUp = false;
