@@ -7,6 +7,7 @@ public class CrocodileMovement : MonoBehaviour
     public float time10s = 10f;
     public float timeTilBoost;
     private bool movingUp = true;
+                       
 
     void Start()
     {

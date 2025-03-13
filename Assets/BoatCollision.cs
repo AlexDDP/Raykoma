@@ -7,17 +7,14 @@ using Unity.VisualScripting;
 public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
-<<<<<<< HEAD
     public int lifeCount = 3;
     public TMP_Text collisionText;
     public TMP_Text Coins;
     // initialises boatSprtie Change so i dont get stupid static error
     private BoatSpriteChange boatSpriteChange;
     public int playerCoins = 0;
-=======
-    public static int lifeCount = 3;
     
->>>>>>> main
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
