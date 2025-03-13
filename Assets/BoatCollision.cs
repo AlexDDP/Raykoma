@@ -27,6 +27,7 @@ public class BoatCollision : MonoBehaviour
                 RockMovement.moveSpeed = 0f;
                 BoatController.moveSpeed = 0f;
                 ScrollingBackground.scrollSpeed = 0f;
+                coinMovement.moveSpeed = 0f;
             }
             Destroy(collision.gameObject);
         }
