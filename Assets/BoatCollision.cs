@@ -7,7 +7,6 @@ using Unity.VisualScripting;
 public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public static int lifeCount = 3;
     
     void Start()
     {
@@ -18,14 +17,13 @@ public class BoatCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
-            lifeCount--;
-            if (lifeCount <= 0)
+            GameProperties.healthPoints--;
+            if (GameProperties.healthPoints <= 0)
             {
                 ScoreUpdate.gameEnded = true;
                 WaterDrag.terminate = true;
                 RockSpawner.spawnRocks = false;
-                RockMovement.moveSpeed = 0f;
-                BoatController.moveSpeed = 0f;
+                GameProperties.objectMoveSpeed = 0f;
                 ScrollingBackground.scrollSpeed = 0f;
             }
             Destroy(collision.gameObject);

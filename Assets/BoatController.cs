@@ -8,7 +8,7 @@ public class BoatController : MonoBehaviour
 
     void Start()
     {
-        moveSpeed = 5f;
+        moveSpeed = 5f; // y speed, wont change
         rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
     }
 
