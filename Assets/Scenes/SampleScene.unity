@@ -241,8 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3726f9e637eb3c145ba19457d7bac694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time10s: 10
-  timeTilBoost: 0
 --- !u!50 &74101040
 Rigidbody2D:
   serializedVersion: 5
@@ -1325,7 +1323,7 @@ Transform:
   m_GameObject: {fileID: 996811903}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.843421, y: 0.10344124, z: -0.041337747}
+  m_LocalPosition: {x: -1.06, y: 0.10344124, z: -0.041337747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1654,7 +1652,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 784, y: 474}
+  m_AnchoredPosition: {x: 397, y: 221.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482865261
@@ -1813,7 +1811,7 @@ MonoBehaviour:
   spawnTop: 0
   yInc: 4.5
   crocsPerSpawn: 1
-  timeTilSpawn: 5
+  timeTilSpawnMax: 0
   timer: 0
   boat: {fileID: 1962341473864592287, guid: f0b52fae646181b429c08640ae7b195c, type: 3}
 --- !u!4 &1489306189
@@ -6839,7 +6837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 303, y: 474.15}
+  m_AnchoredPosition: {x: -164.9, y: 215.8}
   m_SizeDelta: {x: 279.7254, y: 50.308}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2059279274
