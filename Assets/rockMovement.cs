@@ -3,7 +3,7 @@ using TMPro;
 
 public class RockMovement : MonoBehaviour
 {
-    public static float moveSpeed = 5f;  // Speed of the boat
+    public static float moveSpeed;  // Speed of the boat
     private Rigidbody2D rb;
     public float time10s = 10f;
     public float timeTilBoost;
@@ -12,10 +12,11 @@ public class RockMovement : MonoBehaviour
     void Start()
     {
         timeTilBoost = time10s;
+        moveSpeed = 5f;
         rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
     }
 
-    void Update()
+    public void Update()
     {
         if (timeTilBoost > 0)
         {

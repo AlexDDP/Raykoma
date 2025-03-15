@@ -2,42 +2,32 @@ using UnityEngine;
 
 public class CrocodileMovement : MonoBehaviour
 {
-    public static float moveSpeed = 3f;  // Speed of the crocodile
+    public static float crocSpeed;  // Speed of the crocodile
     private Rigidbody2D rb;
-    public float time10s = 10f;
-    public float timeTilBoost;
     private bool movingUp = true;
+    float randSpeed;
 
     void Start()
     {
-        timeTilBoost = time10s;
-        rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
+        crocSpeed = RockMovement.moveSpeed;
+        randSpeed = UnityEngine.Random.Range(0, 5);
+        rb = GetComponent<Rigidbody2D>();  
     }
 
     void Update()
     {
-        // Increase speed every 10 seconds
-        if (timeTilBoost > 0)
-        {
-            timeTilBoost -= Time.deltaTime;
-        }
-        if (timeTilBoost <= 0 && moveSpeed < 7f)  // Max speed limit
-        {
-            timeTilBoost = time10s;
-            moveSpeed *= 1.2f;
-        }
-
+        crocSpeed = RockMovement.moveSpeed+randSpeed;
         // Move left in X and oscillate up/down in Y
         float moveX = -1;  // Moves left
         float moveY = movingUp ? 0.5f : -0.5f;  // Moves up and down
 
         Vector2 moveDirection = new Vector2(moveX, moveY).normalized;
-        Vector2 newVelocity = moveDirection * moveSpeed;
+        Vector2 newVelocity = moveDirection * crocSpeed;
         rb.linearVelocity = newVelocity;
 
         // Change direction in Y after a certain range
-        if (transform.position.y > 2f) movingUp = false;
-        if (transform.position.y < -2f) movingUp = true;
+        if (transform.position.y > 5f) movingUp = false;
+        if (transform.position.y < -5f) movingUp = true;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
