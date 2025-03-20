@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CrocodileMovement : MonoBehaviour
 {
-    public static float moveSpeed = 3f;  // Speed of the crocodile
+    
+    public static float moveSpeed;//Speed of the crocodile -0.5 to 0.5
     private Rigidbody2D rb;
     public float time10s = 10f;
     public float timeTilBoost;
@@ -11,12 +12,18 @@ public class CrocodileMovement : MonoBehaviour
 
     void Start()
     {
+        moveSpeed = RockMovement.moveSpeed;
         timeTilBoost = time10s;
         rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
     }
 
     void Update()
     {
+        moveSpeed = RockMovement.moveSpeed;
+        moveSpeed = Random.Range(1f, 5f);
+
+
+
         // Increase speed every 10 seconds
         if (timeTilBoost > 0)
         {
