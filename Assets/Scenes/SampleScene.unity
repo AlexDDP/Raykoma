@@ -583,6 +583,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effects: {fileID: 1515026331}
   rockCollisionSound: {fileID: 8300000, guid: 89880374dc80a8c42b6d9b1747a41dc6, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 96b8e65352897b24dab85a463bbe0e45, type: 3}
+  backgroundMusic: {fileID: 1835689628}
 --- !u!114 &74101049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,8 +610,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6563584e4f12d8b4d843afb92395c211, type: 3}
-  m_Resource: {fileID: 8300000, guid: 6563584e4f12d8b4d843afb92395c211, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 96b8e65352897b24dab85a463bbe0e45, type: 3}
+  m_Resource: {fileID: 8300000, guid: 96b8e65352897b24dab85a463bbe0e45, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.737
   m_Pitch: 1
@@ -7195,7 +7197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1835689628
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7209,7 +7211,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 5b9e0eecd9c4aca48a5189a8a5cd2483, type: 3}
   m_Resource: {fileID: 8300000, guid: 5b9e0eecd9c4aca48a5189a8a5cd2483, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.705
   m_Pitch: 1
   Loop: 1
   Mute: 0
