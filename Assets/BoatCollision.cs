@@ -8,6 +8,7 @@ public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public int lifeCount = 3;
     public TMP_Text collisionText;
     public TMP_Text Coins;
@@ -20,6 +21,22 @@ public class BoatCollision : MonoBehaviour
     public static int lifeCount = 3;
     public GameObject effects;
 
+>>>>>>> main
+=======
+<<<<<<< Updated upstream
+    public static int lifeCount = 3;
+    public GameObject effects;
+
+=======
+    public int lifeCount = 3;
+    public TMP_Text collisionText;
+    public TMP_Text Coins;
+    // initialises boatSprtie Change so i dont get stupid static error
+    private BoatSpriteChange boatSpriteChange;
+    public int playerCoins = 0;
+    
+    
+>>>>>>> Stashed changes
 >>>>>>> main
     void Start()
     {
@@ -45,12 +62,16 @@ public class BoatCollision : MonoBehaviour
             Destroy(collision.gameObject);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(collision.gameObject.CompareTag("Coin")) 
         {
             playerCoins++;
             Coins.text = "Coins: " + playerCoins;
         }
 =======
+=======
+<<<<<<< Updated upstream
+>>>>>>> main
         GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
 
         // Get the ParticleSystem component and play it
@@ -62,6 +83,16 @@ public class BoatCollision : MonoBehaviour
 
         // Destroy the effect after it's done playing
         Destroy(effectInstance, ps.main.duration);
+<<<<<<< HEAD
+>>>>>>> main
+=======
+=======
+        if(collision.gameObject.CompareTag("Coin")) 
+        {
+            playerCoins++;
+            Coins.text = "Coins: " + playerCoins;
+        }
+>>>>>>> Stashed changes
 >>>>>>> main
         //marwans line of code(uknknown purpose but it works)
         rb.angularVelocity = 0f;
