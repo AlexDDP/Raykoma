@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
     public int lifeCount = 3;
@@ -28,6 +29,12 @@ public class BoatCollision : MonoBehaviour
     public GameObject effects;
 
 =======
+<<<<<<< Updated upstream
+    public static int lifeCount = 3;
+    public GameObject effects;
+
+>>>>>>> Stashed changes
+=======
     public int lifeCount = 3;
     public TMP_Text collisionText;
     public TMP_Text Coins;
@@ -37,7 +44,10 @@ public class BoatCollision : MonoBehaviour
     
     
 >>>>>>> Stashed changes
+<<<<<<< Updated upstream
 >>>>>>> main
+=======
+>>>>>>> Stashed changes
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -61,6 +71,7 @@ public class BoatCollision : MonoBehaviour
             }
             Destroy(collision.gameObject);
         }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
         if(collision.gameObject.CompareTag("Coin")) 
@@ -72,6 +83,9 @@ public class BoatCollision : MonoBehaviour
 =======
 <<<<<<< Updated upstream
 >>>>>>> main
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
         GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
 
         // Get the ParticleSystem component and play it
@@ -83,9 +97,12 @@ public class BoatCollision : MonoBehaviour
 
         // Destroy the effect after it's done playing
         Destroy(effectInstance, ps.main.duration);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 >>>>>>> main
 =======
+=======
+>>>>>>> Stashed changes
 =======
         if(collision.gameObject.CompareTag("Coin")) 
         {
@@ -93,7 +110,10 @@ public class BoatCollision : MonoBehaviour
             Coins.text = "Coins: " + playerCoins;
         }
 >>>>>>> Stashed changes
+<<<<<<< Updated upstream
 >>>>>>> main
+=======
+>>>>>>> Stashed changes
         //marwans line of code(uknknown purpose but it works)
         rb.angularVelocity = 0f;
         }
