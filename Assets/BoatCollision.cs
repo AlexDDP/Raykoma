@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
+<<<<<<< HEAD
     public int lifeCount = 3;
     public TMP_Text collisionText;
     public TMP_Text Coins;
@@ -15,6 +16,11 @@ public class BoatCollision : MonoBehaviour
     public int playerCoins = 0;
     
     
+=======
+    public static int lifeCount = 3;
+    public GameObject effects;
+
+>>>>>>> main
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,16 +39,32 @@ public class BoatCollision : MonoBehaviour
                 RockMovement.moveSpeed = 0f;
                 BoatController.moveSpeed = 0f;
                 ScrollingBackground.scrollSpeed = 0f;
+                coinMovement.moveSpeed = 0f;
+                coinSpawner.spawnCoins = false;
             }
             Destroy(collision.gameObject);
         }
+<<<<<<< HEAD
         if(collision.gameObject.CompareTag("Coin")) 
         {
             playerCoins++;
             Coins.text = "Coins: " + playerCoins;
         }
+=======
+        GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
+
+        // Get the ParticleSystem component and play it
+        ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
+        if (ps != null)
+        {
+            ps.Play(); // Manually play the particle effect
+        }
+
+        // Destroy the effect after it's done playing
+        Destroy(effectInstance, ps.main.duration);
+>>>>>>> main
         //marwans line of code(uknknown purpose but it works)
-            rb.angularVelocity = 0f;
+        rb.angularVelocity = 0f;
         }
 }
 

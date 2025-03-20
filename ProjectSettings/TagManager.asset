@@ -7,6 +7,7 @@ TagManager:
   - Rock
   - Obstacles
   - Crocodile
+  - Coins
   layers:
   - Default
   - TransparentFX
