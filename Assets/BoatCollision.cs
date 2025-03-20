@@ -7,20 +7,9 @@ using Unity.VisualScripting;
 public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
-<<<<<<< Updated upstream
     public static int lifeCount = 3;
     public GameObject effects;
 
-=======
-    public int lifeCount = 3;
-    public TMP_Text collisionText;
-    public TMP_Text Coins;
-    // initialises boatSprtie Change so i dont get stupid static error
-    private BoatSpriteChange boatSpriteChange;
-    public int playerCoins = 0;
-    
-    
->>>>>>> Stashed changes
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,7 +33,6 @@ public class BoatCollision : MonoBehaviour
             }
             Destroy(collision.gameObject);
         }
-<<<<<<< Updated upstream
         GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
 
         // Get the ParticleSystem component and play it
@@ -56,13 +44,6 @@ public class BoatCollision : MonoBehaviour
 
         // Destroy the effect after it's done playing
         Destroy(effectInstance, ps.main.duration);
-=======
-        if(collision.gameObject.CompareTag("Coin")) 
-        {
-            playerCoins++;
-            Coins.text = "Coins: " + playerCoins;
-        }
->>>>>>> Stashed changes
         //marwans line of code(uknknown purpose but it works)
         rb.angularVelocity = 0f;
         }
