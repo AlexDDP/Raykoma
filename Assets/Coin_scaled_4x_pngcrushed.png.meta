@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Coin_scaled_4x_pngcrushed_0: -8057232130049373987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
