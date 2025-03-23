@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Game");
+        // Change "Game" to "SampleScene" to match the actual scene name
+        SceneManager.LoadSceneAsync("SampleScene");
     }
 }
