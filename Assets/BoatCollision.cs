@@ -12,8 +12,11 @@ public class BoatCollision : MonoBehaviour
     public static int lifeCount = 3;
     public GameObject effects;
     public AudioClip rockCollisionSound;
-    // Reference to the rock collision sound clip
+    public AudioClip gameOverSound;
     private AudioSource audioSource;
+    public AudioSource backgroundMusic;
+
+    public static bool isGameOver = false;
 
 =======
     public int lifeCount = 3;
@@ -33,17 +36,17 @@ public class BoatCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
             if (collision.gameObject.CompareTag("Rock"))
             {
                 audioSource.PlayOneShot(rockCollisionSound);
             }
-            
+
             lifeCount--;
             if (lifeCount <= 0)
             {
+                audioSource.PlayOneShot(gameOverSound);
                 ScoreUpdate.gameEnded = true;
                 WaterDrag.terminate = true;
                 RockSpawner.spawnRocks = false;
@@ -52,10 +55,17 @@ public class BoatCollision : MonoBehaviour
                 ScrollingBackground.scrollSpeed = 0f;
                 coinMovement.moveSpeed = 0f;
                 coinSpawner.spawnCoins = false;
+                CrocodileSpawner.spawnCrocodiles = false;
+                DisableCrocodileMovement();
+                if (backgroundMusic != null)
+                {
+                    backgroundMusic.Stop();  // Stop the background music from playing
+                }
+
             }
+
             Destroy(collision.gameObject);
         }
-<<<<<<< Updated upstream
         GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
 
         // Get the ParticleSystem component and play it
@@ -76,6 +86,18 @@ public class BoatCollision : MonoBehaviour
 >>>>>>> Stashed changes
         //marwans line of code(uknknown purpose but it works)
         rb.angularVelocity = 0f;
-        }
-}
+    }
 
+
+    // Function to disable all CrocodileMovement components in the scene
+    private void DisableCrocodileMovement()
+    {
+        // Find all objects with the CrocodileMovement script and disable the script
+        CrocodileMovement[] crocodileMovements = FindObjectsOfType<CrocodileMovement>();
+        foreach (CrocodileMovement crocodileMovement in crocodileMovements)
+        {
+            // Disable the component to stop crocodile movement
+            crocodileMovement.enabled = false;
+        }
+    }
+}

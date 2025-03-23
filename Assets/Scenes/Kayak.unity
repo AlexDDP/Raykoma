@@ -7514,11 +7514,10 @@ SceneRoots:
   - {fileID: 206395902}
   - {fileID: 37746984}
   - {fileID: 1629011726}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - {fileID: 1171379842}
-  - {fileID: 846584005}
-=======
->>>>>>> main
-=======
   - {fileID: 985224276}
+=======
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots: []
+>>>>>>> Stashed changes
