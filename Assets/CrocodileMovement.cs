@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class CrocodileMovement : MonoBehaviour
 {
+
     public static float crocSpeed;  // Speed of the crocodile
+
     private Rigidbody2D rb;
     private bool movingUp = true;
     private float prevY;
@@ -16,11 +18,15 @@ public class CrocodileMovement : MonoBehaviour
         crocSpeed = GameProperties.objectMoveSpeed;
         randSpeed = UnityEngine.Random.Range(0, 5);
         rb = GetComponent<Rigidbody2D>();  
+        timeTilBoost = time10s;
+        rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
+
     }
 
     void Update()
     {
         crocSpeed = GameProperties.objectMoveSpeed+randSpeed;
+
         // Move left in X and oscillate up/down in Y
         float moveX = -1;  // Moves left
         float moveY = movingUp ? 0.5f : -0.5f;  // Moves up and down
@@ -40,23 +46,4 @@ public class CrocodileMovement : MonoBehaviour
         checkYtimer -= Time.deltaTime;
         
     }
-
-    // void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Player"))
-    //     {
-    //         BoatCollision.lifeCount--; // Reduce player life
-
-    //         if (BoatCollision.lifeCount <= 0)
-    //         {
-    //             ScoreUpdate.gameEnded = true;
-    //             WaterDrag.terminate = true;
-    //             RockSpawner.spawnRocks = false;
-    //             GameProperties.objectMoveSpeed = 0f;
-    //             ScrollingBackground.scrollSpeed = 0f;
-    //         }
-
-    //         Destroy(gameObject); // Remove crocodile after collision
-    //     }
-    // }
 }
