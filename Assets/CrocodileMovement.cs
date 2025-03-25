@@ -13,12 +13,10 @@ public class CrocodileMovement : MonoBehaviour
     float checkYIntervals;
     void Start()
     {
-        checkYIntervals = 0.35f;
+        checkYIntervals = 0.1f;
         checkYtimer = checkYIntervals;
         crocSpeed = GameProperties.objectMoveSpeed;
-        randSpeed = UnityEngine.Random.Range(0, 5);
         rb = GetComponent<Rigidbody2D>();  
-        timeTilBoost = time10s;
         rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
 
     }

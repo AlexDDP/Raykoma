@@ -14,6 +14,10 @@ public class BoatController : MonoBehaviour
 
     void Update()
     {
+        if(GameProperties.healthPoints <= 0)
+        {
+            moveSpeed = 0f;
+        }
         float moveY = Input.GetAxis("Vertical");    // W S Keys
         Vector2 moveDirection = new Vector2(0, moveY).normalized;
         Vector2 newVelocity = moveDirection * moveSpeed;
