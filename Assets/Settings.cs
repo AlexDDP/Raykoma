@@ -19,13 +19,13 @@ public class SettingsManager : MonoBehaviour
     }
 
     // Method to set the volume based on the slider
-    void SetVolume(float volume)
+    public void SetVolume(float volume)
     {
         AudioListener.volume = volume; // Set the global audio volume
     }
 
     // Method to toggle fullscreen mode
-    void SetFullscreen(bool isFullscreen)
+    public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen; // Set fullscreen mode
     }
