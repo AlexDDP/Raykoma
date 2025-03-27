@@ -8,6 +8,10 @@ public class CrocodileMovement : MonoBehaviour
     public float time10s = 10f;
     public float timeTilBoost;
     private bool movingUp = true;
+
+    public int crocodilesDodged = 0; // Number of crocodiles dodged
+
+    public coinAccum coinNum; // Reference to the coin amount
                        
 
     void Start()
@@ -66,5 +70,26 @@ public class CrocodileMovement : MonoBehaviour
 
             Destroy(gameObject); // Remove crocodile after collision
         }
-    }
+        else 
+        {
+            Destroy(gameObject); // Remove crocodile after collision
+            crocodilesDodged++;  // Increment the number of crocodiles dodged
+        }
+
+        if(crocodilesDodged > 100)
+        {
+            AchievementManager.Instance.UnlockAchievement("Crocodile Master I!!!"); // Unlock the achievement
+            Debug.Log("Achievement Unlocked: Crocodile dodger I!!!");
+            coinAccum.coins += 100; // Add 100 coins to the player's total
+        } else if(crocodilesDodged > 300)
+        {
+            AcheivementManager.Instance.UnlockAchievement("Crocodile Master II!!!"); // Unlock the achievement
+            Debug.Log("Acheivement Unlocked: Crocodile Dodger II!!!");
+            coinAccum.coins += 200; // Add 200 coins to the player's total
+        } else if(crocodilesDodged > 500)
+        {
+            AcheivementManager.Instance.UnlockAchievement("Crocodile Master III!!!"); // Unlock the achievement
+            Debug.Log("Acheivement Unlocked: Crocodile Dodger III!!!");
+            coinAccum.coins += 300; // Add 300 coins to the player's total
+        }
 }
