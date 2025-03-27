@@ -1,6 +1,7 @@
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
-public class ScrollingBackground : MonoBehaviour
+public class ScrollingBackgroundCycle : MonoBehaviour
 {
     public GameObject background1;  // First background tile
     public GameObject background2;  // Second background tile
@@ -8,10 +9,12 @@ public class ScrollingBackground : MonoBehaviour
     public static float scrollSpeed;  // Speed at which the background scrolls
     public float tileWidth;   // Width of one background tile (adjust based on your texture)
     public float pivot;
+    SpriteRenderer sr;
 
     private void Start()
     {
-        tileWidth = 19.7f;
+        sr = GetComponent<SpriteRenderer>();
+        tileWidth = ((Vector2) sr.sprite.bounds.size * transform.lossyScale).x;
         pivot = 25f;
         scrollSpeed = GameProperties.objectMoveSpeed;
     }
