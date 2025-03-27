@@ -10,14 +10,13 @@ public class CrocodileSpawner : MonoBehaviour
     public float spawnTop = 0;
     public float yInc = 4.5f;
     public int crocsPerSpawn = 1;
-    public float timeTilSpawnMax;
+    public float timeTilSpawn = 5.0f;
     public float timer;
     public GameObject boat;
 
     void Start()
     {
-        timeTilSpawnMax = 15f ;
-        timer = 5f;
+        timer = timeTilSpawn;
     }
 
     void Update()
@@ -39,8 +38,8 @@ public class CrocodileSpawner : MonoBehaviour
                 spawnTop += yInc;
             }
 
-            if (timeTilSpawnMax > 10f) timeTilSpawnMax -= 0.2f;
-            timer = UnityEngine.Random.Range(5f, timeTilSpawnMax);
+            if (timeTilSpawn > 2f) timeTilSpawn -= 0.2f;
+            timer = UnityEngine.Random.Range(1f, timeTilSpawn);
         }
         else
         {

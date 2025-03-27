@@ -38,8 +38,6 @@ public class BoatCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
-            GameProperties.healthPoints--;
-            if (GameProperties.healthPoints <= 0)
             if (collision.gameObject.CompareTag("Rock"))
             {
                 audioSource.PlayOneShot(rockCollisionSound);
@@ -52,7 +50,8 @@ public class BoatCollision : MonoBehaviour
                 ScoreUpdate.gameEnded = true;
                 WaterDrag.terminate = true;
                 RockSpawner.spawnRocks = false;
-                GameProperties.objectMoveSpeed = 0f;
+                RockMovement.moveSpeed = 0f;
+                BoatController.moveSpeed = 0f;
                 ScrollingBackground.scrollSpeed = 0f;
                 coinMovement.moveSpeed = 0f;
                 coinSpawner.spawnCoins = false;
