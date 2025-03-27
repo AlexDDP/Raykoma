@@ -5,10 +5,9 @@ using System.IO;
 using Unity.VisualScripting;
 using UnityEngine.Audio;
 
-public class BoatCollision : MonoBehaviour
+public class BoatCollision2 : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public static int lifeCount = 3;
     public GameObject effects;
     public AudioClip rockCollisionSound;
     public AudioClip gameOverSound;
@@ -27,15 +26,13 @@ public class BoatCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
-            GameProperties.healthPoints--;
-            if (GameProperties.healthPoints <= 0)
+            GameProperties.healthPoints2--;
             if (collision.gameObject.CompareTag("Rock"))
             {
                 audioSource.PlayOneShot(rockCollisionSound);
             }
 
-            lifeCount--;
-            if (lifeCount <= 0)
+            if (GameProperties.healthPoints2 <= 0)
             {
                 audioSource.PlayOneShot(gameOverSound);
                 ScoreUpdate.gameEnded = true;
@@ -46,42 +43,27 @@ public class BoatCollision : MonoBehaviour
                 coinMovement.moveSpeed = 0f;
                 coinSpawner.spawnCoins = false;
                 CrocodileSpawner.spawnCrocodiles = false;
-                DisableCrocodileMovement();
                 if (backgroundMusic != null)
                 {
                     backgroundMusic.Stop();  // Stop the background music from playing
                 }
-
             }
+            GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
+            // Get the ParticleSystem component and play it
+            ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
+            if (ps != null)
+            {
+                ps.Play(); // Manually play the particle effect
+            }
+
+            // Destroy the effect after it's done playing
+            Destroy(effectInstance, ps.main.duration);
 
             Destroy(collision.gameObject);
         }
 
-        GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
 
-        // Get the ParticleSystem component and play it
-        ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
-        if (ps != null)
-        {
-            ps.Play(); // Manually play the particle effect
-        }
-
-        // Destroy the effect after it's done playing
-        Destroy(effectInstance, ps.main.duration);
         //marwans line of code(uknknown purpose but it works)
         rb.angularVelocity = 0f;
-    }
-
-
-    // Function to disable all CrocodileMovement components in the scene
-    private void DisableCrocodileMovement()
-    {
-        // Find all objects with the CrocodileMovement script and disable the script
-        CrocodileMovement[] crocodileMovements = FindObjectsOfType<CrocodileMovement>();
-        foreach (CrocodileMovement crocodileMovement in crocodileMovements)
-        {
-            // Disable the component to stop crocodile movement
-            crocodileMovement.enabled = false;
-        }
     }
 }

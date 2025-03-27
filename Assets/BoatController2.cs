@@ -1,24 +1,25 @@
 using UnityEngine;
 
-public class BoatController : MonoBehaviour
+public class BoatController2 : MonoBehaviour
 {
-    public static float moveSpeed;  // Speed of the boat
+    public static float moveSpeed = GameProperties.objectMoveSpeed;  // Speed of the boat
     private Rigidbody2D rb;
+    float moveY;
 
 
     void Start()
     {
-        moveSpeed = 5f; // y speed, wont change
+        moveSpeed = GameProperties.objectMoveSpeed; // y speed, wont change
         rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
+        moveY = 0;
     }
 
     void Update()
     {
-        if(GameProperties.healthPoints <= 0)
-        {
-            moveSpeed = 0f;
-        }
-        float moveY = Input.GetAxis("Vertical");    // W S Keys
+        moveY = 0;
+        moveSpeed = GameProperties.objectMoveSpeed;
+        if (Input.GetKey(KeyCode.UpArrow)) moveY = 1f;
+        if (Input.GetKey(KeyCode.DownArrow)) moveY = -1f;
         Vector2 moveDirection = new Vector2(0, moveY).normalized;
         Vector2 newVelocity = moveDirection * moveSpeed;
         rb.linearVelocity = newVelocity;  // Apply movement

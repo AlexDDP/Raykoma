@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f889ee30d868dde47ad8f15971e9afac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - effects: {instanceID: 0}
+  - rockCollisionSound: {fileID: 8300000, guid: 89880374dc80a8c42b6d9b1747a41dc6,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
