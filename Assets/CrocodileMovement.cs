@@ -8,7 +8,6 @@ public class CrocodileMovement : MonoBehaviour
     private Rigidbody2D rb;
     private bool movingUp = true;
     private float prevY;
-    float randSpeed;
     float checkYtimer;
     float checkYIntervals;
     void Start()
@@ -16,14 +15,12 @@ public class CrocodileMovement : MonoBehaviour
         checkYIntervals = 0.1f;
         checkYtimer = checkYIntervals;
         crocSpeed = GameProperties.objectMoveSpeed;
-        rb = GetComponent<Rigidbody2D>();  
-        rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
-
+        rb = GetComponent<Rigidbody2D>(); 
     }
 
     void Update()
     {
-        crocSpeed = GameProperties.objectMoveSpeed+randSpeed;
+        crocSpeed = GameProperties.objectMoveSpeed;
 
         // Move left in X and oscillate up/down in Y
         float moveX = -1;  // Moves left

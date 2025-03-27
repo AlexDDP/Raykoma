@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HeartChange : MonoBehaviour
+public class HeartChange1 : MonoBehaviour
 {
     public Sprite[] heartSprites = new Sprite[4]; 
     private SpriteRenderer spriteRenderer;
@@ -8,13 +8,13 @@ public class HeartChange : MonoBehaviour
 
     void Start()
     {
-        life = GameProperties.healthPoints;
+        life = GameProperties.healthPoints1;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void Update()
     {
-        life = Mathf.Max(GameProperties.healthPoints, 0);
+        life = Mathf.Max(GameProperties.healthPoints1, 0);
         spriteRenderer.sprite = heartSprites[life];
     }
 }
