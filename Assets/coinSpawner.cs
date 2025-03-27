@@ -12,7 +12,6 @@ public class coinSpawner : MonoBehaviour
     public int coinsPerSpawn;
     public float timeTilSpawn = 5.0f;
     public float timer;
-    public GameObject boat;
 
     void Start()
     {
@@ -36,12 +35,6 @@ public class coinSpawner : MonoBehaviour
 
                 // Instantiate the rock
                 GameObject coin = Instantiate(Coin, spawnPosition, Quaternion.identity);
-
-                // Get the RockDespawn component from the rock and assign the boat reference
-                coinDespawn coinDespawn = coin.GetComponent<coinDespawn>();
-                if (coinDespawn != null)
-                    coinDespawn.boat = boat;  // Assign the boat reference dynamically
-
                 spawnMin += yInc;
                 spawnTop += yInc;
             }
