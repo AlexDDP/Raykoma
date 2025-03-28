@@ -46,7 +46,6 @@ public class BoatCollision : MonoBehaviour
                 coinMovement.moveSpeed = 0f;
                 coinSpawner.spawnCoins = false;
                 CrocodileSpawner.spawnCrocodiles = false;
-                DisableCrocodileMovement();
                 if (backgroundMusic != null)
                 {
                     backgroundMusic.Stop();  // Stop the background music from playing
@@ -70,18 +69,5 @@ public class BoatCollision : MonoBehaviour
         Destroy(effectInstance, ps.main.duration);
         //marwans line of code(uknknown purpose but it works)
         rb.angularVelocity = 0f;
-    }
-
-
-    // Function to disable all CrocodileMovement components in the scene
-    private void DisableCrocodileMovement()
-    {
-        // Find all objects with the CrocodileMovement script and disable the script
-        CrocodileMovement[] crocodileMovements = FindObjectsOfType<CrocodileMovement>();
-        foreach (CrocodileMovement crocodileMovement in crocodileMovements)
-        {
-            // Disable the component to stop crocodile movement
-            crocodileMovement.enabled = false;
-        }
     }
 }
