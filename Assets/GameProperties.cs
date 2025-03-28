@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameProperties
+public class GameProperties : MonoBehaviour
 {
     public static float objectMoveSpeed = 5f;
     public static int healthPoints1 = 3;

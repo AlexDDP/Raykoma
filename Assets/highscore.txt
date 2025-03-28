@@ -1,5 +1,5 @@
 <<<<<<< Updated upstream
-High Score: 980 got by Dell
+High Score: 996 got by Dell
 =======
-High Score: 997 got by Dell
+High Score: 322 got by Dell
 >>>>>>> Stashed changes
