@@ -14,6 +14,7 @@ public class BoatCollision : MonoBehaviour
     public AudioClip gameOverSound;
     private AudioSource audioSource;
     public AudioSource backgroundMusic;
+    public GameManagerScript gameManager;
 
     public static bool isGameOver = false;
 
@@ -47,6 +48,7 @@ public class BoatCollision : MonoBehaviour
                 coinSpawner.spawnCoins = false;
                 CrocodileSpawner.spawnCrocodiles = false;
                 DisableCrocodileMovement();
+                gameManager.gameOver();
                 if (backgroundMusic != null)
                 {
                     backgroundMusic.Stop();  // Stop the background music from playing
