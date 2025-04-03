@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class BoatController : MonoBehaviour
 {
+<<<<<<< Updated upstream:Assets/BoatController.cs
+    public static float moveSpeed;  // Speed of the boat
+=======
     public static float moveSpeed = 5f;  // Speed of the boat
+>>>>>>> Stashed changes:Assets/BoatController1.cs
     private Rigidbody2D rb;
     public float time10s = 10f;
     public float timeTilBoost;
@@ -10,23 +14,17 @@ public class BoatController : MonoBehaviour
 
     void Start()
     {
-        timeTilBoost = time10s;
+        moveSpeed = 5f; // y speed, wont change
         rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
     }
 
     void Update()
     {
-        //if (timeTilBoost > 0)
-        //{
-        //    timeTilBoost -= Time.deltaTime;
-        //}
-        //if (timeTilBoost <= 0)
-        //{
-        //    timeTilBoost = time10s;
-        //    moveSpeed = (float)(moveSpeed * 1.5);
-        //}
+        if(GameProperties.healthPoints <= 0)
+        {
+            moveSpeed = 0f;
+        }
         float moveY = Input.GetAxis("Vertical");    // W S Keys
-
         Vector2 moveDirection = new Vector2(0, moveY).normalized;
         Vector2 newVelocity = moveDirection * moveSpeed;
         rb.linearVelocity = newVelocity;  // Apply movement
