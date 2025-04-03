@@ -1273,6 +1273,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1220354207945037375, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
   m_PrefabInstance: {fileID: 7507205611493989378}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &664028953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664028947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8913f3ab236f1e40a00f9a36821f9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 0}
+  despawnDistance: 30
 --- !u!1 &816385231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,6 +2161,74 @@ MonoBehaviour:
   timer: 0
   playerName: 
   scoreTextString: 
+--- !u!1 &1489306187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1489306189}
+  - component: {fileID: 1489306188}
+  - component: {fileID: 1489306190}
+  m_Layer: 0
+  m_Name: CrocodileSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1489306188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489306187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf8857a692245b46b0b271caea7559a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crocodilePrefab: {fileID: 664028947}
+  spawnDistance: 15
+  spawnMin: -4.5
+  spawnTop: 0
+  yInc: 4.5
+  crocsPerSpawn: 1
+  timeTilSpawnMax: 0
+  timer: 0
+  boat: {fileID: 1962341473864592287, guid: f0b52fae646181b429c08640ae7b195c, type: 3}
+--- !u!4 &1489306189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489306187}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1135.1532, y: 470.41815, z: 4.739663}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1489306190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489306187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8913f3ab236f1e40a00f9a36821f9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 0}
+  despawnDistance: 30
 --- !u!1 &1515026331
 GameObject:
   m_ObjectHideFlags: 0
@@ -7622,7 +7704,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1220354207945037375, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 664028953}
   m_SourcePrefab: {fileID: 100100000, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
