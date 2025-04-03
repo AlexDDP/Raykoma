@@ -93,3 +93,4 @@ public class CrocodileMovement : MonoBehaviour
             coinAccum.coins += 300; // Add 300 coins to the player's total
         }
 }
+}

@@ -8,17 +8,6 @@ using UnityEngine.Audio;
 public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
-<<<<<<< Updated upstream
-    public static int lifeCount = 3;
-    public GameObject effects;
-    public AudioClip rockCollisionSound;
-    public AudioClip gameOverSound;
-    private AudioSource audioSource;
-    public AudioSource backgroundMusic;
-
-    public static bool isGameOver = false;
-
-=======
     public int lifeCount = 3;
     public TMP_Text collisionText;
     public TMP_Text Coins;
@@ -27,7 +16,6 @@ public class BoatCollision : MonoBehaviour
     public int playerCoins = 0;
     
     
->>>>>>> Stashed changes
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -83,18 +71,18 @@ public class BoatCollision : MonoBehaviour
             playerCoins++;
             Coins.text = "Coins: " + playerCoins;
         }
->>>>>>> Stashed changes
+>>> >>>>>>> //Stashed changes
         //marwans line of code(uknknown purpose but it works)
         rb.angularVelocity = 0f;
     }
 
 
-    // Function to disable all CrocodileMovement components in the scene
+    // Function to disable all CrocodileMo/// vement components in the scene
     private void DisableCrocodileMovement()
-    {
-        // Find all objects with the CrocodileMovement script and disable the script
-        CrocodileMovement[] crocodileMovements = FindObjectsOfType<CrocodileMovement>();
-        foreach (CrocodileMovement crocodileMovement in crocodileMovements)
+   {
+        // Find all objects with the CrocodileMovement script and disable  the script
+        CrocodileMovement[] crocodileMovements = FndObjectsOfType<CrocodileMovement>();
+        foreach (CrocodleMovement crocodileMovement in crocodileMovements)
         {
             // Disable the component to stop crocodile movement
             crocodileMovement.enabled = false;
