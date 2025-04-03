@@ -65,13 +65,11 @@ public class BoatCollision : MonoBehaviour
 
         // Destroy the effect after it's done playing
         Destroy(effectInstance, ps.main.duration);
-=======
         if(collision.gameObject.CompareTag("Coin")) 
         {
             playerCoins++;
             Coins.text = "Coins: " + playerCoins;
         }
->>> >>>>>>> //Stashed changes
         //marwans line of code(uknknown purpose but it works)
         rb.angularVelocity = 0f;
     }
