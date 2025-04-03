@@ -12,9 +12,11 @@ public class coinSpawner : MonoBehaviour
     public int coinsPerSpawn;
     public float timeTilSpawn = 5.0f;
     public float timer;
+    public GameObject boat;
 
     void Start()
     {
+        Debug.Log("34");
         coinsPerSpawn = 1;
         timer = timeTilSpawn;
         spawnCoins = true;
@@ -33,8 +35,9 @@ public class coinSpawner : MonoBehaviour
                 float randomOffsetX = UnityEngine.Random.Range(-3f, 5f);
                 Vector2 spawnPosition = new Vector2(spawnDistance + randomOffsetX, randomY);
 
-                // Instantiate the rock
+                // Instantiate the coin
                 GameObject coin = Instantiate(Coin, spawnPosition, Quaternion.identity);
+                Debug.Log("44");
                 spawnMin += yInc;
                 spawnTop += yInc;
             }

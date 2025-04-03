@@ -5,9 +5,10 @@ using System.IO;
 using Unity.VisualScripting;
 using UnityEngine.Audio;
 
-public class BoatCollision2 : MonoBehaviour
+public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public static int lifeCount = 3;
     public GameObject effects;
     public AudioClip rockCollisionSound;
     public AudioClip gameOverSound;
@@ -26,13 +27,15 @@ public class BoatCollision2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
-            GameProperties.healthPoints2--;
+            GameProperties.healthPoints--;
+            if (GameProperties.healthPoints <= 0)
             if (collision.gameObject.CompareTag("Rock"))
             {
                 audioSource.PlayOneShot(rockCollisionSound);
             }
 
-            if (GameProperties.healthPoints2 <= 0)
+            lifeCount--;
+            if (lifeCount <= 0)
             {
                 audioSource.PlayOneShot(gameOverSound);
                 ScoreUpdate.gameEnded = true;
@@ -47,22 +50,23 @@ public class BoatCollision2 : MonoBehaviour
                 {
                     backgroundMusic.Stop();  // Stop the background music from playing
                 }
-            }
-            GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
-            // Get the ParticleSystem component and play it
-            ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
-            if (ps != null)
-            {
-                ps.Play(); // Manually play the particle effect
-            }
 
-            // Destroy the effect after it's done playing
-            Destroy(effectInstance, ps.main.duration);
+            }
 
             Destroy(collision.gameObject);
         }
 
+        GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
 
+        // Get the ParticleSystem component and play it
+        ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
+        if (ps != null)
+        {
+            ps.Play(); // Manually play the particle effect
+        }
+
+        // Destroy the effect after it's done playing
+        Destroy(effectInstance, ps.main.duration);
         //marwans line of code(uknknown purpose but it works)
         rb.angularVelocity = 0f;
     }

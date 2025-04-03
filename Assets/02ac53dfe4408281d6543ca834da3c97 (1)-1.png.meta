@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5103d4a5cfbc48148816b5698a07f1ca
+guid: 8f2a507dc2ec42147bd9348fc2d1251e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8057232130049373987
-    second: Coin_scaled_4x_pngcrushed_0
+      213: -4908454068391762259
+    second: 02ac53dfe4408281d6543ca834da3c97 (1)-1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Coin_scaled_4x_pngcrushed_0
+      name: 02ac53dfe4408281d6543ca834da3c97 (1)-1_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 15
-        width: 98
-        height: 102
+        x: 0
+        y: 0
+        width: 1400
+        height: 1400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd80b871116fe2090800000000000000
-      internalID: -8057232130049373987
+      spriteID: da62039e70ba1ebb0800000000000000
+      internalID: -4908454068391762259
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Coin_scaled_4x_pngcrushed_0: -8057232130049373987
+      02ac53dfe4408281d6543ca834da3c97 (1)-1_0: -4908454068391762259
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
