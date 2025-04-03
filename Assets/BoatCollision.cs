@@ -46,6 +46,8 @@ public class BoatCollision : MonoBehaviour
                 coinMovement.moveSpeed = 0f;
                 coinSpawner.spawnCoins = false;
                 CrocodileSpawner.spawnCrocodiles = false;
+                LogSpawn.spawnLogs = false;
+                LogMovement.moveSpeed = 0f;
                 DisableCrocodileMovement();
                 if (backgroundMusic != null)
                 {
