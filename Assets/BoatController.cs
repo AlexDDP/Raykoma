@@ -2,11 +2,8 @@ using UnityEngine;
 
 public class BoatController : MonoBehaviour
 {
-<<<<<<< Updated upstream:Assets/BoatController.cs
     public static float moveSpeed;  // Speed of the boat
-=======
     public static float moveSpeed = 5f;  // Speed of the boat
->>>>>>> Stashed changes:Assets/BoatController1.cs
     private Rigidbody2D rb;
     public float time10s = 10f;
     public float timeTilBoost;
