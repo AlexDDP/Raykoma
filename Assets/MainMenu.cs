@@ -10,4 +10,9 @@ public class MainMenu : MonoBehaviour
         // Change "Game" to "SampleScene" to match the actual scene name
         SceneManager.LoadSceneAsync("SampleScene");
     }
+    public void OpenSettings()
+    {
+        // Replace "Settings" with the name of your settings scene
+        SceneManager.LoadSceneAsync("Settings");
+    }
 }
