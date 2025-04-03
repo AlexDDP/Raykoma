@@ -12,6 +12,7 @@ public class CrocodileSpawner : MonoBehaviour
     public int crocsPerSpawn = 1;
     public float timeTilSpawn = 5.0f;
     public float timer;
+    public GameObject boat;
 
     void Start()
     {
