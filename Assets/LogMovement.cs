@@ -28,6 +28,6 @@ public class LogMovement : MonoBehaviour
         }
 
         // Instead of locking position, move log forward at a consistent speed
-        rb.velocity = new Vector2(-moveSpeed, 0); // Move left at moveSpeed
+        rb.linearVelocity = new Vector2(-moveSpeed, 0); // Move left at moveSpeed
     }
 }
