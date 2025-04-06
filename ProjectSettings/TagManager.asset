@@ -8,6 +8,7 @@ TagManager:
   - Obstacles
   - Crocodile
   - Coins
+  - FinishLine
   layers:
   - Default
   - TransparentFX
