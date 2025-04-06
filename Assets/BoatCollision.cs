@@ -24,6 +24,29 @@ public class BoatCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("FinishLine"))
+        {
+            Debug.Log("Game Over: You reached the finish line!");
+            audioSource.PlayOneShot(gameOverSound);
+            ScoreUpdate.gameEnded = true;
+            WaterDrag.terminate = true;
+            RockSpawner.spawnRocks = false;
+            RockMovement.moveSpeed = 0f;
+            BoatController.moveSpeed = 0f;
+            ScrollingBackground.scrollSpeed = 0f;
+            coinMovement.moveSpeed = 0f;
+            coinSpawner.spawnCoins = false;
+            CrocodileSpawner.spawnCrocodiles = false;
+            LogSpawn.spawnLogs = false;
+            LogMovement.moveSpeed = 0f;
+            DisableCrocodileMovement();
+            if (backgroundMusic != null)
+            {
+                backgroundMusic.Stop();  // Stop the background music from playing
+            }
+            Destroy(collision.gameObject);
+
+        }
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
             if (collision.gameObject.CompareTag("Rock"))
@@ -44,6 +67,8 @@ public class BoatCollision : MonoBehaviour
                 coinMovement.moveSpeed = 0f;
                 coinSpawner.spawnCoins = false;
                 CrocodileSpawner.spawnCrocodiles = false;
+                LogSpawn.spawnLogs = false;
+                LogMovement.moveSpeed = 0f;
                 DisableCrocodileMovement();
                 if (backgroundMusic != null)
                 {
