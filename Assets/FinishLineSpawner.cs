@@ -4,52 +4,36 @@ using System.Collections;  // Required for coroutines
 public class FinishLineSpawner : MonoBehaviour
 {
     public GameObject finishLinePrefab;  // Drag in the prefab in Inspector
-    public float delay = 3f;  // Time before spawning the finish line
+    public float delay;  // Time before spawning the finish line
     public float moveSpeed;  // Speed at which the finish line moves towards the player
     private GameObject finishLineInstance;  // To store the spawned finish line object
 
     void Start()
     {
         moveSpeed = GameProperties.objectMoveSpeed;
+        delay = GameProperties.finishLineTimer; // assigns delay from GAME PROPERTIES file
         Invoke(nameof(SpawnFinishLine), delay);  // Delay before spawning the finish line
     }
 
     void SpawnFinishLine()
     {
         moveSpeed = GameProperties.objectMoveSpeed;
-        // Get camera position
 
-        // Find the boat object
-        GameObject boat = GameObject.FindGameObjectWithTag("Player");
+        // Spawn the finish line 5 units ahead of the camera
+        Vector3 spawnPos = new Vector3(15f, 0, 0.1f);  // Adjust X (camera + 5 units)
 
-        if (boat != null)
+        Debug.Log("Spawning Finish Line at: " + spawnPos);
+
+        // Check if prefab is assigned and instantiate it
+        if (finishLinePrefab != null)
         {
-            float yPos = boat.transform.position.y;  // Use boat's Y position
-            Debug.Log("Boat Y Position: " + yPos);
+            finishLineInstance = Instantiate(finishLinePrefab, spawnPos, Quaternion.identity);
+            Debug.Log("Finish Line Spawned!");
 
-            // Spawn the finish line 5 units ahead of the camera
-            Vector3 spawnPos = new Vector3(15f, 0, 0.1f);  // Adjust X (camera + 5 units)
-
-            Debug.Log("Spawning Finish Line at: " + spawnPos);
-
-            // Check if prefab is assigned and instantiate it
-            if (finishLinePrefab != null)
-            {
-                finishLineInstance = Instantiate(finishLinePrefab, spawnPos, Quaternion.identity);
-                Debug.Log("Finish Line Spawned!");
-
-                // Start moving the finish line towards the player
-                StartCoroutine(MoveFinishLine());
-            }
-            else
-            {
-                Debug.LogError("Finish Line Prefab is not assigned!");
-            }
+            // Start moving the finish line towards the player
+            StartCoroutine(MoveFinishLine());
         }
-        else
-        {
-            Debug.LogWarning("Boat not found!");
-        }
+ 
     }
 
     IEnumerator MoveFinishLine()

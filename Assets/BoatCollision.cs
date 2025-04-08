@@ -25,10 +25,8 @@ public class BoatCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision innit");
         if (collision.gameObject.CompareTag("FinishLine"))
         {
-            Debug.Log("Game Over: You reached the finish line!");
             audioSource.PlayOneShot(gameOverSound);
             ScoreUpdate.gameEnded = true;
             WaterDrag.terminate = true;
@@ -39,7 +37,6 @@ public class BoatCollision : MonoBehaviour
             coinSpawner.spawnCoins = false;
             CrocodileSpawner.spawnCrocodiles = false;
             LogSpawn.spawnLogs = false;
-            DisableCrocodileMovement();
             if (backgroundMusic != null)
             {
                 backgroundMusic.Stop();  // Stop the background music from playing
@@ -70,12 +67,10 @@ public class BoatCollision : MonoBehaviour
                 CrocodileSpawner.spawnCrocodiles = false;
                 LogSpawn.spawnLogs = false;
                 LogMovement.moveSpeed = 0f;
-                DisableCrocodileMovement();
                 if (backgroundMusic != null)
                 {
                     backgroundMusic.Stop();  // Stop the background music from playing
                 }
-
             }
 
             Destroy(collision.gameObject);
@@ -97,15 +92,15 @@ public class BoatCollision : MonoBehaviour
     }
 
 
-    // Function to disable all CrocodileMovement components in the scene
-    private void DisableCrocodileMovement()
-    {
-        // Find all objects with the CrocodileMovement script and disable the script
-        CrocodileMovement[] crocodileMovements = FindObjectsOfType<CrocodileMovement>();
-        foreach (CrocodileMovement crocodileMovement in crocodileMovements)
-        {
-            // Disable the component to stop crocodile movement
-            crocodileMovement.enabled = false;
-        }
-    }
+    //// Function to disable all CrocodileMovement components in the scene
+    //private void DisableCrocodileMovement()
+    //{
+    //    // Find all objects with the CrocodileMovement script and disable the script
+    //    CrocodileMovement[] crocodileMovements = FindObjectsOfType<CrocodileMovement>();
+    //    foreach (CrocodileMovement crocodileMovement in crocodileMovements)
+    //    {
+    //        // Disable the component to stop crocodile movement
+    //        crocodileMovement.enabled = false;
+    //    }
+    //}
 }
