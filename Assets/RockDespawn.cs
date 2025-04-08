@@ -6,6 +6,18 @@ public class RockDespawn : MonoBehaviour
    public float despawnDistance = 30f;  // Distance at which rocks despawn
    public int RocksDodged = 0; // Number of rocks dodged
 
+   public GameObject achievementManager; // Reference to the AchievementManager
+
+    void Start()
+    {
+        if (boat == null)
+        {
+            boat = GameObject.FindGameObjectWithTag("Boat");  
+        }
+    }
+
+    // Update is called once per frame
+
    void Update()
     {
         if (boat != null)
