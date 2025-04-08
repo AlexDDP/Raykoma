@@ -48,8 +48,17 @@ public class RockDespawn : MonoBehaviour
    public float despawnDistance = 30f;  // Distance at which rocks despawn
    public int RocksDodged = 0; // Number of rocks dodged
 
+   public GameObject achievementManager; // Reference to the AchievementManager
 
-   public AchievementManager achievementManager; // Reference to the AchievementManager script
+    void Start()
+    {
+        if (boat == null)
+        {
+            boat = GameObject.FindGameObjectWithTag("Boat");  
+        }
+    }
+
+    // Update is called once per frame
 
    void Update()
     {
@@ -62,19 +71,19 @@ public class RockDespawn : MonoBehaviour
 
                 if(RocksDodged > 20) 
                 {
-                    achievementManager.UnlockAchievement("Rock Dodger 1!!");  // Unlock the Rock Dodger 1!! achievement
+                    AchievementManager.Instance.UnlockAchievement("Rock Dodger 1!!");  // Unlock the Rock Dodger 1!! achievement
                     Debug.Log("Achievement Unlocked: Rock Dodger 1!!");
                 } else if (RocksDodged > 50)
                 {
-                    achievementManager.UnlockAchievement("Rock Dodger 2!!");  // Unlock the Rock Dodger 2!! achievement
+                    AchievementManager.Instance.UnlockAchievement("Rock Dodger 2!!");  // Unlock the Rock Dodger 2!! achievement
                     Debug.Log("Achievement Unlocked: Rock Dodger 2!!");
                 } else if(RocksDodged > 100)
                 {
-                    achievementManager.UnlockAchievement("Rock Dodger 3!!");  // Unlock the Rock Dodger 3!! achievement
+                    AchievementManager.Instance.UnlockAchievement("Rock Dodger 3!!");  // Unlock the Rock Dodger 3!! achievement
                     Debug.Log("Achievement Unlocked: Rock Dodger 3!!");
                 } else if(RocksDodged > 200)
                 {
-                    acheivementManager.UnlockAchievement("Rock Dodger 4!!");  // Unlock the Rock Dodger 4!! achievement
+                    AcheivementManager.Instance.UnlockAchievement("Rock Dodger 4!!");  // Unlock the Rock Dodger 4!! achievement
                     Debug.Log("Achievement Unlocked: Rock Dodger 4!!");
                 }
             }
