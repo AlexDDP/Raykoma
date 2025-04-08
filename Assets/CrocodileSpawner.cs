@@ -36,7 +36,8 @@ public class CrocodileSpawner : MonoBehaviour
                 GameObject crocodile = Instantiate(crocodilePrefab, spawnPosition, Quaternion.identity);
 
                 ObjectDespawn crocDespawn = crocodile.GetComponent<ObjectDespawn>();
-     
+
+  
 
                 spawnMin += yInc;
                 spawnTop += yInc;

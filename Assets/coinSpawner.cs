@@ -35,8 +35,11 @@ public class coinSpawner : MonoBehaviour
                 Vector2 spawnPosition = new Vector2(spawnDistance + randomOffsetX, randomY);
 
                 // Instantiate the rock
-                //GameObject coin = Instantiate(Coin, spawnPosition, Quaternion.identity);
-                Instantiate(Coin, spawnPosition, Quaternion.identity);
+                GameObject coin = Instantiate(Coin, spawnPosition, Quaternion.identity);
+                if (coin != null)
+                {
+                    ObjectDespawn crocDespawn = coin.GetComponent<ObjectDespawn>();
+                }
 
                 spawnMin += yInc;
                 spawnTop += yInc;

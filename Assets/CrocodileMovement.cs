@@ -17,7 +17,6 @@ public class CrocodileMovement : MonoBehaviour
         checkYtimer = checkYIntervals;
         crocSpeed = GameProperties.objectMoveSpeed;
         rb = GetComponent<Rigidbody2D>();  
-
     }
 
     void Update()

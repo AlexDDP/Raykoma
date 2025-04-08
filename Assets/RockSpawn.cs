@@ -34,8 +34,14 @@ public class RockSpawner : MonoBehaviour
                 Vector2 spawnPosition = new Vector2(spawnDistance + randomOffsetX, randomY);
 
                 // Instantiate the rock
-                //GameObject rock = Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
-                Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
+                GameObject rock = Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
+                if (rock != null)
+                {
+                    ObjectDespawn rockDespawn = rock.GetComponent<ObjectDespawn>();
+                    // You can now safely access the crocDespawn component
+                }
+
+                //Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
 
                 spawnMin += yInc;
                 spawnTop += yInc;
