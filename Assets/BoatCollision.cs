@@ -25,6 +25,7 @@ public class BoatCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Collision innit");
         if (collision.gameObject.CompareTag("FinishLine"))
         {
             Debug.Log("Game Over: You reached the finish line!");
@@ -32,14 +33,12 @@ public class BoatCollision : MonoBehaviour
             ScoreUpdate.gameEnded = true;
             WaterDrag.terminate = true;
             RockSpawner.spawnRocks = false;
-            RockMovement.moveSpeed = 0f;
+            GameProperties.objectMoveSpeed = 0f;
             BoatController.moveSpeed = 0f;
             ScrollingBackground.scrollSpeed = 0f;
-            coinMovement.moveSpeed = 0f;
             coinSpawner.spawnCoins = false;
             CrocodileSpawner.spawnCrocodiles = false;
             LogSpawn.spawnLogs = false;
-            LogMovement.moveSpeed = 0f;
             DisableCrocodileMovement();
             if (backgroundMusic != null)
             {

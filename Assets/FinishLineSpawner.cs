@@ -4,20 +4,20 @@ using System.Collections;  // Required for coroutines
 public class FinishLineSpawner : MonoBehaviour
 {
     public GameObject finishLinePrefab;  // Drag in the prefab in Inspector
-    public float delay = 10f;  // Time before spawning the finish line
-    public float moveSpeed = 5f;  // Speed at which the finish line moves towards the player
+    public float delay = 3f;  // Time before spawning the finish line
+    public float moveSpeed;  // Speed at which the finish line moves towards the player
     private GameObject finishLineInstance;  // To store the spawned finish line object
 
     void Start()
     {
+        moveSpeed = GameProperties.objectMoveSpeed;
         Invoke(nameof(SpawnFinishLine), delay);  // Delay before spawning the finish line
     }
 
     void SpawnFinishLine()
     {
+        moveSpeed = GameProperties.objectMoveSpeed;
         // Get camera position
-        Vector3 cameraPos = Camera.main.transform.position;
-        Debug.Log("Camera Position: " + cameraPos);
 
         // Find the boat object
         GameObject boat = GameObject.FindGameObjectWithTag("Player");
@@ -28,7 +28,7 @@ public class FinishLineSpawner : MonoBehaviour
             Debug.Log("Boat Y Position: " + yPos);
 
             // Spawn the finish line 5 units ahead of the camera
-            Vector3 spawnPos = new Vector3(cameraPos.x + 5f, yPos, 0.1f);  // Adjust X (camera + 5 units)
+            Vector3 spawnPos = new Vector3(15f, 0, 0.1f);  // Adjust X (camera + 5 units)
 
             Debug.Log("Spawning Finish Line at: " + spawnPos);
 
@@ -54,11 +54,10 @@ public class FinishLineSpawner : MonoBehaviour
 
     IEnumerator MoveFinishLine()
     {
+        moveSpeed = GameProperties.objectMoveSpeed;
         // Move the finish line towards the boat
         while (finishLineInstance != null)
         {
-            // Move the finish line towards the player's position in both X and Y directions
-            float moveX = -1f;  // Move finish line to the left
             float moveY = finishLineInstance.transform.position.y;  // Keep Y position the same (or change if needed)
 
             // Update position by moving towards the camera's X
