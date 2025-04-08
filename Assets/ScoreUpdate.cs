@@ -18,7 +18,6 @@ public class ScoreUpdate : MonoBehaviour
     void Start()
     {
         playerName = System.Environment.UserName;
-        Debug.Log("Player Name: " + playerName);
         timer = timeTilUpdate;
         filePath = Application.dataPath + "/highScore.txt"; // Saves inside Assets folder
         LoadHighScore();

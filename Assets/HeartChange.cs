@@ -14,7 +14,8 @@ public class HeartChange : MonoBehaviour
 
     public void Update()
     {
-        life = Mathf.Max(GameProperties.healthPoints, 0);
+        // makes sure life is between 3 and 0 when accessing array
+        life = Mathf.Min(3, Mathf.Max(GameProperties.healthPoints, 0));
         spriteRenderer.sprite = heartSprites[life];
     }
 }

@@ -35,12 +35,8 @@ public class coinSpawner : MonoBehaviour
                 Vector2 spawnPosition = new Vector2(spawnDistance + randomOffsetX, randomY);
 
                 // Instantiate the rock
-                GameObject coin = Instantiate(Coin, spawnPosition, Quaternion.identity);
-
-                // Get the RockDespawn component from the rock and assign the boat reference
-                coinDespawn coinDespawn = coin.GetComponent<coinDespawn>();
-                if (coinDespawn != null)
-                    coinDespawn.boat = boat;  // Assign the boat reference dynamically
+                //GameObject coin = Instantiate(Coin, spawnPosition, Quaternion.identity);
+                Instantiate(Coin, spawnPosition, Quaternion.identity);
 
                 spawnMin += yInc;
                 spawnTop += yInc;

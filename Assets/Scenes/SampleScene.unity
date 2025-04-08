@@ -189,7 +189,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.98, y: 1.02}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1200,7 +1200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8913f3ab236f1e40a00f9a36821f9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boat: {fileID: 0}
   despawnDistance: 30
 --- !u!1 &816385231
 GameObject:
@@ -1341,6 +1340,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time10s: 10
   timeTilBoost: 0
+--- !u!114 &889635608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889635591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8913f3ab236f1e40a00f9a36821f9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnDistance: 30
 --- !u!1 &898860046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,7 +2127,7 @@ MonoBehaviour:
   crocsPerSpawn: 1
   timeTilSpawnMax: 0
   timer: 0
-  boat: {fileID: 1962341473864592287, guid: f0b52fae646181b429c08640ae7b195c, type: 3}
+  boat: {fileID: 0}
 --- !u!4 &1489306189
 Transform:
   m_ObjectHideFlags: 0
@@ -2143,7 +2155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8913f3ab236f1e40a00f9a36821f9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boat: {fileID: 0}
   despawnDistance: 30
 --- !u!1 &1515026331
 GameObject:
@@ -7015,7 +7026,7 @@ MonoBehaviour:
   rocksPerSpawn: 3
   timeTilSpawn: 5
   timer: 0
-  boat: {fileID: 74101038}
+  boat: {fileID: 0}
 --- !u!4 &1556008978
 Transform:
   m_ObjectHideFlags: 0
@@ -7563,6 +7574,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 6197746959719546007, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -7575,6 +7587,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 889635602}
+    - targetCorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889635608}
   m_SourcePrefab: {fileID: 100100000, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
 --- !u!1001 &7507205611493989378
 PrefabInstance:

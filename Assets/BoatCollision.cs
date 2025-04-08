@@ -8,7 +8,6 @@ using UnityEngine.Audio;
 public class BoatCollision : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public static int lifeCount = 3;
     public GameObject effects;
     public AudioClip rockCollisionSound;
     public AudioClip gameOverSound;
@@ -46,15 +45,12 @@ public class BoatCollision : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
-            GameProperties.healthPoints--;
-            if (GameProperties.healthPoints <= 0)
             if (collision.gameObject.CompareTag("Rock"))
             {
                 audioSource.PlayOneShot(rockCollisionSound);
             }
-
-            lifeCount--;
-            if (lifeCount <= 0)
+            GameProperties.healthPoints--;
+            if (GameProperties.healthPoints <= 0)
             {
                 audioSource.PlayOneShot(gameOverSound);
                 ScoreUpdate.gameEnded = true;

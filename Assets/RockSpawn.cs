@@ -12,7 +12,6 @@ public class RockSpawner : MonoBehaviour
     public int rocksPerSpawn;
     public float timeTilSpawn = 5.0f;
     public float timer;
-    public GameObject boat;
 
     void Start()
     {
@@ -35,12 +34,8 @@ public class RockSpawner : MonoBehaviour
                 Vector2 spawnPosition = new Vector2(spawnDistance + randomOffsetX, randomY);
 
                 // Instantiate the rock
-                GameObject rock = Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
-
-                // Get the RockDespawn component from the rock and assign the boat reference
-                RockDespawn rockDespawn = rock.GetComponent<RockDespawn>();
-                if (rockDespawn != null)
-                    rockDespawn.boat = boat;  // Assign the boat reference dynamically
+                //GameObject rock = Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
+                Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
 
                 spawnMin += yInc;
                 spawnTop += yInc;
