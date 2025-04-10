@@ -7601,6 +7601,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 276554524868799691, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7549126388573961117, guid: 333d878889e2fcc44a993ce3a7aa2f09, type: 3}
     - target: {fileID: 1220354207945037375, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
       propertyPath: m_Name
       value: Crocodile
@@ -7611,11 +7615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2817865441338720861, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.82421064
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 2817865441338720861, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8274
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 2817865441338720861, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
       propertyPath: m_LocalPosition.x
