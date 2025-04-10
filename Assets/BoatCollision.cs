@@ -47,7 +47,7 @@ public class BoatCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
             GameProperties.healthPoints--;
-            if (GameProperties.healthPoints <= 0)
+            
             if (collision.gameObject.CompareTag("Rock"))
             {
                 audioSource.PlayOneShot(rockCollisionSound);
