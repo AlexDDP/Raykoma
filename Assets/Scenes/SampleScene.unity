@@ -1705,15 +1705,15 @@ RectTransform:
   m_GameObject: {fileID: 1446339262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.015, y: 0.015, z: 0.015}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 898860050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 784, y: 424}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 7.1333375, y: 4.537942}
+  m_SizeDelta: {x: 257.101, y: -32.5036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446339264
 MonoBehaviour:
@@ -1800,7 +1800,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -31.05946, z: 0, w: -199.60617}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1970,7 +1970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.8351703, y: 4.058632}
+  m_AnchoredPosition: {x: 6.7608113, y: 3.5752892}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482865261
@@ -7399,7 +7399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.7882161, y: 4.058632}
+  m_AnchoredPosition: {x: 0.33570445, y: 4.058632}
   m_SizeDelta: {x: 501.1094, y: 66.517}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2059279274
@@ -7601,6 +7601,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 276554524868799691, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7549126388573961117, guid: 333d878889e2fcc44a993ce3a7aa2f09, type: 3}
     - target: {fileID: 1220354207945037375, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
       propertyPath: m_Name
       value: Crocodile
@@ -7611,11 +7615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2817865441338720861, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.82421064
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 2817865441338720861, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8274
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 2817865441338720861, guid: 4f4c9d98d5b89b345856c443d20d5066, type: 3}
       propertyPath: m_LocalPosition.x
