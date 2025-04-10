@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Grass Improved_scaled_62x_pngcrushed_0: 4183406401654699737
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
