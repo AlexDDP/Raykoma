@@ -16,14 +16,16 @@ public class AchievementManager : MonoBehaviour
 
     public List<Achievement> achievements = new List<Achievement>();
 
-    private void Awake()
+   private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-    } else {
+    if (Instance == null)
+    {
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+    else
+    {
         Destroy(gameObject);
-
     }
 }
 
@@ -36,4 +38,5 @@ public class AchievementManager : MonoBehaviour
             Debug.Log($"Achievement Unlocked: {achievementName}");
         }
     }
+}
 
