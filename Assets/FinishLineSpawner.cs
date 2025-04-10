@@ -11,6 +11,7 @@ public class FinishLineSpawner : MonoBehaviour
     void Start()
     {
         moveSpeed = GameProperties.objectMoveSpeed;
+        delay = GameProperties.finishLineTimer; // assigns delay from GAME PROPERTIES file
         Invoke(nameof(SpawnFinishLine), delay);  // Delay before spawning the finish line
     }
 
@@ -21,37 +22,21 @@ public class FinishLineSpawner : MonoBehaviour
         Vector3 cameraPos = Camera.main.transform.position;
         Debug.Log("Camera Position: " + cameraPos);
 
-        // Find the boat object
-        GameObject boat = GameObject.FindGameObjectWithTag("Player");
+        // Spawn the finish line 5 units ahead of the camera
+        Vector3 spawnPos = new Vector3(15f, 0, 0.1f);  // Adjust X (camera + 5 units)
 
-        if (boat != null)
+        Debug.Log("Spawning Finish Line at: " + spawnPos);
+
+        // Check if prefab is assigned and instantiate it
+        if (finishLinePrefab != null)
         {
-            float yPos = boat.transform.position.y;  // Use boat's Y position
-            Debug.Log("Boat Y Position: " + yPos);
+            finishLineInstance = Instantiate(finishLinePrefab, spawnPos, Quaternion.identity);
+            Debug.Log("Finish Line Spawned!");
 
-            // Spawn the finish line 5 units ahead of the camera
-            Vector3 spawnPos = new Vector3(cameraPos.x + 5f, yPos, 0.1f);  // Adjust X (camera + 5 units)
-
-            Debug.Log("Spawning Finish Line at: " + spawnPos);
-
-            // Check if prefab is assigned and instantiate it
-            if (finishLinePrefab != null)
-            {
-                finishLineInstance = Instantiate(finishLinePrefab, spawnPos, Quaternion.identity);
-                Debug.Log("Finish Line Spawned!");
-
-                // Start moving the finish line towards the player
-                StartCoroutine(MoveFinishLine());
-            }
-            else
-            {
-                Debug.LogError("Finish Line Prefab is not assigned!");
-            }
+            // Start moving the finish line towards the player
+            StartCoroutine(MoveFinishLine());
         }
-        else
-        {
-            Debug.LogWarning("Boat not found!");
-        }
+ 
     }
 
     IEnumerator MoveFinishLine()
@@ -60,6 +45,7 @@ public class FinishLineSpawner : MonoBehaviour
         // Move the finish line towards the boat
         while (finishLineInstance != null)
         {
+            float moveY = finishLineInstance.transform.position.y;  // Keep Y position the same (or change if needed)
 
             // Update position by moving towards the camera's X
             finishLineInstance.transform.position = Vector3.MoveTowards(finishLineInstance.transform.position,

@@ -272,8 +272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f0eea6e8360d0468584f4498f79e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time10s: 10
-  timeTilBoost: 0
 --- !u!50 &36003477
 Rigidbody2D:
   serializedVersion: 5
@@ -336,8 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3726f9e637eb3c145ba19457d7bac694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time10s: 10
-  timeTilBoost: 0
 --- !u!50 &74101040
 Rigidbody2D:
   serializedVersion: 5
@@ -429,7 +425,11 @@ Transform:
   m_GameObject: {fileID: 74101038}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -4.6632, y: -0.1252, z: 0}
+=======
+  m_LocalPosition: {x: -6, y: -0, z: 0}
+>>>>>>> origin/oisinBranch
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -671,7 +671,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7932798033344189819, guid: 6990e78e73cf9294a82e0ff450de9dc7, type: 3}
+  m_Sprite: {fileID: -8382630811295585665, guid: 5129c271e09fbf84ea2d232da44157ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -691,8 +691,8 @@ Transform:
   m_GameObject: {fileID: 145049065}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.9, y: 0, z: 2}
-  m_LocalScale: {x: 2, y: 1.4, z: 1}
+  m_LocalPosition: {x: 19.7, y: 0, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1245,7 +1245,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7932798033344189819, guid: 6990e78e73cf9294a82e0ff450de9dc7, type: 3}
+  m_Sprite: {fileID: -8382630811295585665, guid: 5129c271e09fbf84ea2d232da44157ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1266,7 +1266,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2}
-  m_LocalScale: {x: 2, y: 1.4, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1468,6 +1468,7 @@ MonoBehaviour:
   background2: {fileID: 145049065}
   background3: {fileID: 1906614537}
   tileWidth: 18
+  pivot: 0
 --- !u!4 &996811905
 Transform:
   m_ObjectHideFlags: 0
@@ -1870,6 +1871,90 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+=======
+--- !u!1 &1470881464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 962521407510932813, guid: ab38f8c410248684794cc370ca7ced23, type: 3}
+  m_PrefabInstance: {fileID: 665372021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1470881465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470881464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a94f3acf7233342a5ab93101646a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logPrefab: {fileID: 1470881464}
+  spawnDistance: 15
+  spawnMin: -4.5
+  spawnTop: 0
+  yInc: 4.5
+  logsPerSpawn: 0
+  timeTilSpawn: 5
+  timer: 0
+  boat: {fileID: 0}
+--- !u!114 &1470881466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470881464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d26abf8ac3f00144aa473ad04f6250e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time10s: 10
+  timeTilBoost: 0
+--- !u!114 &1470881467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470881464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7f678ebb456f748bd4b992917dbe13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 74101038}
+  despawnDistance: 30
+--- !u!50 &1470881468
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470881464}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+>>>>>>> origin/oisinBranch
 --- !u!1 &1482597415 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: 158444926579df2478ab7637b214b580, type: 3}
@@ -2098,7 +2183,7 @@ MonoBehaviour:
   spawnTop: 0
   yInc: 4.5
   crocsPerSpawn: 1
-  timeTilSpawn: 5
+  timeTilSpawnMax: 0
   timer: 0
   boat: {fileID: 1962341473864592287, guid: f0b52fae646181b429c08640ae7b195c, type: 3}
 --- !u!4 &1489306189
@@ -7277,7 +7362,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7932798033344189819, guid: 6990e78e73cf9294a82e0ff450de9dc7, type: 3}
+  m_Sprite: {fileID: -8382630811295585665, guid: 5129c271e09fbf84ea2d232da44157ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7297,8 +7382,8 @@ Transform:
   m_GameObject: {fileID: 1906614537}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.8, y: 0, z: 3}
-  m_LocalScale: {x: 2, y: 1.4, z: 1}
+  m_LocalPosition: {x: -19.7, y: 0, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
