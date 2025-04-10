@@ -7,6 +7,9 @@ public class CrocodileMovement : MonoBehaviour
     private Rigidbody2D rb;
     public float time10s = 10f;
     public float timeTilBoost;
+    public float checkYtimer;
+    public float checkYIntervals;
+    public float crocSpeed; 
     private bool movingUp = true;
 
     public int crocodilesDodged = 0; // Number of crocodiles dodged

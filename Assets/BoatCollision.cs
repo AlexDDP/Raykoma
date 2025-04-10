@@ -14,6 +14,13 @@ public class BoatCollision : MonoBehaviour
     // initialises boatSprtie Change so i dont get stupid static error
     private BoatSpriteChange boatSpriteChange;
     public int playerCoins = 0;
+    public GameObject effects;
+    public AudioClip rockCollisionSound;
+    public AudioClip gameOverSound;
+    public AudioSource backgroundMusic;
+    private AudioSource audioSource;
+    public CoinMovement coinMovement;
+    public CoinSpawner coinSpawner;
     
     
     void Start()
