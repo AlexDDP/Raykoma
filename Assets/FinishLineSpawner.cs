@@ -4,17 +4,19 @@ using System.Collections;  // Required for coroutines
 public class FinishLineSpawner : MonoBehaviour
 {
     public GameObject finishLinePrefab;  // Drag in the prefab in Inspector
-    public float delay = 10f;  // Time before spawning the finish line
-    public float moveSpeed = 5f;  // Speed at which the finish line moves towards the player
+    public float delay = 3f;  // Time before spawning the finish line
+    public float moveSpeed;  // Speed at which the finish line moves towards the player
     private GameObject finishLineInstance;  // To store the spawned finish line object
 
     void Start()
     {
+        moveSpeed = GameProperties.objectMoveSpeed;
         Invoke(nameof(SpawnFinishLine), delay);  // Delay before spawning the finish line
     }
 
     void SpawnFinishLine()
     {
+        moveSpeed = GameProperties.objectMoveSpeed;
         // Get camera position
         Vector3 cameraPos = Camera.main.transform.position;
         Debug.Log("Camera Position: " + cameraPos);
@@ -54,16 +56,14 @@ public class FinishLineSpawner : MonoBehaviour
 
     IEnumerator MoveFinishLine()
     {
+        moveSpeed = GameProperties.objectMoveSpeed;
         // Move the finish line towards the boat
         while (finishLineInstance != null)
         {
-            // Move the finish line towards the player's position in both X and Y directions
-            float moveX = -1f;  // Move finish line to the left
-            float moveY = finishLineInstance.transform.position.y;  // Keep Y position the same (or change if needed)
 
             // Update position by moving towards the camera's X
             finishLineInstance.transform.position = Vector3.MoveTowards(finishLineInstance.transform.position,
-                                                                        new Vector3(Camera.main.transform.position.x - 5f, moveY, finishLineInstance.transform.position.z),
+                                                                        new Vector3(Camera.main.transform.position.x - 5f, 0, finishLineInstance.transform.position.z),
                                                                         moveSpeed * Time.deltaTime);
             yield return null;  // Wait until the next frame
         }
