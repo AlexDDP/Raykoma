@@ -45,8 +45,7 @@ public class FinishLineSpawner : MonoBehaviour
             float moveY = finishLineInstance.transform.position.y;  // Keep Y position the same (or change if needed)
 
             // Update position by moving towards the camera's X
-            finishLineInstance.transform.position = Vector3.MoveTowards(finishLineInstance.transform.position,
-                                                                        new Vector3(Camera.main.transform.position.x - 5f, moveY, finishLineInstance.transform.position.z),
+            finishLineInstance.transform.position = Vector3.MoveTowards(finishLineInstance.transform.position, new Vector3(Camera.main.transform.position.x - 5f, moveY, finishLineInstance.transform.position.z),
                                                                         moveSpeed * Time.deltaTime);
             yield return null;  // Wait until the next frame
         }
