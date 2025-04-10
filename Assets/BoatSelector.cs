@@ -11,7 +11,7 @@ public class BoatSelectorUI : MonoBehaviour
     void Start()
     {
         // Get the boat index (you can set this dynamically for each boat)
-        int boatIndex = PlayerPrefs.GetInt("SelectedBoatIndex", 0);  // Default to 0 if no selection
+        int boatIndex = PlayerPrefs.GetInt("SelectedBoatIndex", 1);  // Default to 1 if no selection
 
         // Get the cost of the selected boat based on boatIndex
         int boatCost = costs[boatIndex];
