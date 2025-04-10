@@ -16,17 +16,11 @@ public class CrocodileMovement : MonoBehaviour
 
     void Start()
     {
-<<<<<<< HEAD
-        moveSpeed = RockMovement.moveSpeed;
-        timeTilBoost = time10s;
-        rb = GetComponent<Rigidbody2D>();  // Get Rigidbody2D component
-=======
         checkYIntervals = 0.1f;
         checkYtimer = checkYIntervals;
         crocSpeed = GameProperties.objectMoveSpeed;
         rb = GetComponent<Rigidbody2D>();  
 
->>>>>>> origin/oisinBranch
     }
 
     void Update()
