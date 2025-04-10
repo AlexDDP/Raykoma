@@ -15,4 +15,8 @@ public class MainMenu : MonoBehaviour
         // Replace "Settings" with the name of your settings scene
         SceneManager.LoadSceneAsync("Settings");
     }
+    public void OpenShop()
+    {
+        SceneManager.LoadSceneAsync("Shop");
+    }
 }
