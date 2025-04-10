@@ -20,9 +20,12 @@ public class AchievementManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-        else
-            Destroy(gameObject);
+            DontDestroyOnLoad(gameObject);
+    } else {
+        Destroy(gameObject);
+
     }
+}
 
     public void UnlockAchievement(string achievementName)
     {
@@ -33,4 +36,4 @@ public class AchievementManager : MonoBehaviour
             Debug.Log($"Achievement Unlocked: {achievementName}");
         }
     }
-}
+
