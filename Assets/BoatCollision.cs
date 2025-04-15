@@ -52,7 +52,8 @@ public class BoatCollision : MonoBehaviour
             GameProperties.healthPoints--;
             if (collision.gameObject.CompareTag("Rock"))
             {
-                audioSource.PlayOneShot(rockCollisionSound);
+                    AchievementSystem.Instance.Unlock("hit_rock");
+                    audioSource.PlayOneShot(rockCollisionSound);
             }
 
             lifeCount--;
