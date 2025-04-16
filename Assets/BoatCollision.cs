@@ -4,11 +4,10 @@ using System;
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class BoatCollision : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public static int lifeCount = 3;
     public GameObject effects;
     public AudioClip rockCollisionSound;
     public AudioClip gameOverSound;
@@ -19,7 +18,6 @@ public class BoatCollision : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -27,21 +25,30 @@ public class BoatCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("FinishLine"))
         {
-            audioSource.PlayOneShot(gameOverSound);
-            ScoreUpdate.gameEnded = true;
-            WaterDrag.terminate = true;
-            RockSpawner.spawnRocks = false;
-            GameProperties.objectMoveSpeed = 0f;
-            BoatController.moveSpeed = 0f;
-            ScrollingBackground.scrollSpeed = 0f;
-            coinSpawner.spawnCoins = false;
-            CrocodileSpawner.spawnCrocodiles = false;
-            LogSpawn.spawnLogs = false;
-            if (backgroundMusic != null)
-            {
-                backgroundMusic.Stop();  // Stop the background music from playing
-            }
+            //audioSource.PlayOneShot(gameOverSound);
+            //ScoreUpdate.gameEnded = true;
+            //WaterDrag.terminate = true;
+            //RockSpawner.spawnRocks = false;
+            //GameProperties.objectMoveSpeed = 0f;
+            //BoatController.moveSpeed = 0f;
+            //ScrollingBackground.scrollSpeed = 0f;
+            //coinSpawner.spawnCoins = false;
+            //CrocodileSpawner.spawnCrocodiles = false;
+            //LogSpawn.spawnLogs = false;
+            //if (backgroundMusic != null)
+            //{
+            //    backgroundMusic.Stop();  // Stop the background music from playing
+            //}
+            GameProperties.healthPoints = 3;
+            GameProperties.objectMoveSpeed = 5f;
+            string sceneName = SceneManager.GetActiveScene().name;
             Destroy(collision.gameObject);
+            if (sceneName == "SampleScene")
+                SceneManager.LoadSceneAsync("Cycling");
+            else if (sceneName == "Cycling")
+                SceneManager.LoadSceneAsync("Running");
+            else if (sceneName == "Running")
+                SceneManager.LoadSceneAsync("EndingScene");
 
         }
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
@@ -50,12 +57,11 @@ public class BoatCollision : MonoBehaviour
             //if (GameProperties.healthPoints <= 0)
             if (collision.gameObject.CompareTag("Rock"))
             {
-                    AchievementSystem.Instance.Unlock("hit_rock");
-                    audioSource.PlayOneShot(rockCollisionSound);
+                //AchievementSystem.Instance.Unlock("hit_rock");
+                audioSource.PlayOneShot(rockCollisionSound);
             }
 
-            lifeCount--;
-            if (lifeCount <= 0)
+            if (GameProperties.healthPoints <= 0)
             {
                 audioSource.PlayOneShot(gameOverSound);
                 ScoreUpdate.gameEnded = true;
@@ -77,31 +83,32 @@ public class BoatCollision : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
+        //GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
 
-        // Get the ParticleSystem component and play it
-        ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
-        if (ps != null)
-        {
-            ps.Play(); // Manually play the particle effect
-        }
+        //    // Get the ParticleSystem component and play it
+        //    ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
+        //    if (ps != null)
+        //    {
+        //        ps.Play(); // Manually play the particle effect
+        //    }
 
-        // Destroy the effect after it's done playing
-        Destroy(effectInstance, ps.main.duration);
-        //marwans line of code(uknknown purpose but it works)
-        rb.angularVelocity = 0f;
+        //    // Destroy the effect after it's done playing
+        //    Destroy(effectInstance, ps.main.duration);
+        //    //marwans line of code(uknknown purpose but it works)
+        //    rb.angularVelocity = 0f;
+        //}
+
+
+        //// Function to disable all CrocodileMovement components in the scene
+        //private void DisableCrocodileMovement()
+        //{
+        //    // Find all objects with the CrocodileMovement script and disable the script
+        //    CrocodileMovement[] crocodileMovements = FindObjectsOfType<CrocodileMovement>();
+        //    foreach (CrocodileMovement crocodileMovement in crocodileMovements)
+        //    {
+        //        // Disable the component to stop crocodile movement
+        //        crocodileMovement.enabled = false;
+        //    }
+        //}
     }
-
-
-    //// Function to disable all CrocodileMovement components in the scene
-    //private void DisableCrocodileMovement()
-    //{
-    //    // Find all objects with the CrocodileMovement script and disable the script
-    //    CrocodileMovement[] crocodileMovements = FindObjectsOfType<CrocodileMovement>();
-    //    foreach (CrocodileMovement crocodileMovement in crocodileMovements)
-    //    {
-    //        // Disable the component to stop crocodile movement
-    //        crocodileMovement.enabled = false;
-    //    }
-    //}
 }

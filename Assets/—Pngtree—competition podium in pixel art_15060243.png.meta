@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 78e4708966ffcd046aab710d9c5f24ed
+guid: 95d9241f3b9682e41966bf6fae98d7d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2243636610144141374
-    second: settings_page_0
+      213: -348622812299384491
+    second: "\u2014Pngtree\u2014competition podium in pixel art_15060243_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: settings_page_0
+      name: "\u2014Pngtree\u2014competition podium in pixel art_15060243_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 22677
-        height: 12756
+        x: 282
+        y: 171
+        width: 1937
+        height: 2109
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2cffb4fe3600dd0e0800000000000000
-      internalID: -2243636610144141374
+      spriteID: 5592c483661792bf0800000000000000
+      internalID: -348622812299384491
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      settings_page_0: -2243636610144141374
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

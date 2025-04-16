@@ -403,6 +403,8 @@ GameObject:
   - component: {fileID: 74101049}
   - component: {fileID: 74101050}
   - component: {fileID: 74101051}
+  - component: {fileID: 74101053}
+  - component: {fileID: 74101052}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Player
@@ -710,6 +712,35 @@ MonoBehaviour:
   - {fileID: 636163207994489355, guid: a0218c59835ebe44bb33d1c7fd69461d, type: 3}
   - {fileID: -4187383797145547557, guid: a026c622091904e479c8194ccf0bc79c, type: 3}
   mainBoatRenderer: {fileID: 74101041}
+--- !u!114 &74101052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74101038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c6aca1474c71744ae90cdcac5c6990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishLinePrefab: {fileID: 2820632446940716511, guid: 1d96f8c0ae572724394d550cfdb44afe, type: 3}
+  delay: 0
+  moveSpeed: 0
+--- !u!114 &74101053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74101038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f502b87107f2b14a852f0866f109f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time10s: 10
+  timeTilBoost: 0
 --- !u!1001 &161239283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1569,8 +1600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d75f9763d748ba43b77cee3d85f1233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time10s: 10
-  timeTilBoost: 0
 --- !u!1 &898860046
 GameObject:
   m_ObjectHideFlags: 0
