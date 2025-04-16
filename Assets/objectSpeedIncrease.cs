@@ -11,7 +11,6 @@ public class objectSpeedIncrease : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(GameProperties.objectMoveSpeed);
         if (timeTilBoost > 0)
         {
             timeTilBoost -= Time.deltaTime;

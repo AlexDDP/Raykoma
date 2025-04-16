@@ -28,7 +28,7 @@ public class coinAccum : MonoBehaviour
             PlayerPrefs.SetInt("Coins", coins);
             PlayerPrefs.Save();
 
-            AchievementSystem.Instance.Unlock("collect_coin");
+            //AchievementSystem.Instance.Unlock("collect_coin");
 
             // Play coin sound if available
             if (audioSource != null && coinSound != null)
