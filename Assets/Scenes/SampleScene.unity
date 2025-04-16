@@ -2604,7 +2604,6 @@ MonoBehaviour:
   highScore: 0
   scoreText: {fileID: 1482865261}
   highScoreText: {fileID: 2059279274}
-  score: 0
   timeTilUpdate: 0.1
   timer: 0
   playerName: 
@@ -7953,6 +7952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1447942512}
+  backgroundMusic: {fileID: 1835689628}
 --- !u!4 &1828919586
 Transform:
   m_ObjectHideFlags: 0
