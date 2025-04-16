@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Underwater Crocodile_scaled_20x_2.0_0: 5568148507447184228
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

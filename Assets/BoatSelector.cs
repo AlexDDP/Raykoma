@@ -61,6 +61,8 @@ public class BoatSelectorUI : MonoBehaviour
     {
         PlayerPrefs.DeleteAll(); // Clears all saved PlayerPrefs data
         PlayerPrefs.Save(); // Save the changes to PlayerPrefs (optional)
+        PlayerPrefs.SetInt("SelectedBoatIndex", 1);
+        PlayerPrefs.Save();  // Save the changes to PlayerPrefs
         Debug.Log("PlayerPrefs have been reset.");
     }
 }

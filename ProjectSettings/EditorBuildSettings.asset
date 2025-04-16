@@ -17,6 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 8324c3340659e504484ea86b7b1ef61e
+  - enabled: 1
+    path: Assets/Scenes/Cycling.unity
+    guid: 61cc68f59f1af054ca01a81386faa2f5
+  - enabled: 1
+    path: Assets/Scenes/Running.unity
+    guid: 00297aaa9169f6445afb3e4037d4645b
+  - enabled: 1
+    path: Assets/Scenes/endingScene.unity
+    guid: 6187c77384405124e88167d09b8746d4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
