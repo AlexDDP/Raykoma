@@ -17,19 +17,17 @@ public class ScoreUpdate : MonoBehaviour
     public string scoreTextString;
     void Start()
     {
-        playerName = System.Environment.UserName;
-        Debug.Log("Player Name: " + playerName);
         timer = timeTilUpdate;
         filePath = Application.dataPath + "/highScore.txt"; // Saves inside Assets folder
         LoadHighScore();
-        highScoreText.text = "" + scoreTextString;
+        highScoreText.text =  scoreTextString;
     }
     void Update()
     {
         if(timer < 0 && !gameEnded)
         {
             score += 1;
-            scoreText.text = "Score: " + score;
+            scoreText.text = score.ToString();
             timer = timeTilUpdate;
         }
         if (gameEnded)
@@ -44,7 +42,7 @@ public class ScoreUpdate : MonoBehaviour
         if (score > highScore)
         {
             highScore = score;
-            File.WriteAllText(filePath, "High Score: " + highScore.ToString() + " got by " + playerName);
+            File.WriteAllText(filePath, highScore.ToString());
         }
     }
 
@@ -53,14 +51,7 @@ public class ScoreUpdate : MonoBehaviour
         if (File.Exists(filePath))
         {
             scoreTextString = File.ReadAllText(filePath);
-            string num = "";
-            int idx = 12;
-            while (Char.IsDigit(scoreTextString[idx]))
-            {
-                num += scoreTextString[idx];
-                idx++;
-            }
-            if(!string.IsNullOrEmpty(num)) highScore = int.Parse(num);
+            if(!string.IsNullOrEmpty(scoreTextString)) highScore = int.Parse(scoreTextString);
             else highScore = 0;
         }
 
