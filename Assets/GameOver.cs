@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     public void RestartButton() {
-        SceneManager.LoadSceneAsync("Game");
+     
+        SceneManager.LoadSceneAsync("SampleScene");
+
     }
 
     public void ExitButton() {
         SceneManager.LoadSceneAsync("Main Menu");
     }
+
 }

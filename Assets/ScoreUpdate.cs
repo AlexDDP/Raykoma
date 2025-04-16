@@ -9,7 +9,7 @@ public class ScoreUpdate : MonoBehaviour
     public int highScore = 0;
     public TMP_Text scoreText;
     public TMP_Text highScoreText;
-    public int score = 0;
+    public static int score = 0;
     public float timeTilUpdate = 0.1f;
     public float timer;
     public static Boolean gameEnded = false;
