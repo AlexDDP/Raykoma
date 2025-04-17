@@ -12,6 +12,7 @@ public class BoatCollision : MonoBehaviour
     public AudioClip rockCollisionSound;
     public AudioClip gameOverSound;
     private AudioSource audioSource;
+
     public AudioSource backgroundMusic;
 
     public static bool isGameOver = false;
@@ -49,8 +50,8 @@ public class BoatCollision : MonoBehaviour
                 SceneManager.LoadSceneAsync("Running");
             else if (sceneName == "Running")
                 SceneManager.LoadSceneAsync("EndingScene");
-
         }
+
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
             GameProperties.healthPoints--;
@@ -78,6 +79,7 @@ public class BoatCollision : MonoBehaviour
                 {
                     backgroundMusic.Stop();  // Stop the background music from playing
                 }
+                StartCoroutine(ResetGameAfterDelay()); // changed from LoadGameSceneAfterDelay
             }
 
             Destroy(collision.gameObject);
@@ -110,5 +112,33 @@ public class BoatCollision : MonoBehaviour
         //        crocodileMovement.enabled = false;
         //    }
         //}
+    }
+
+    System.Collections.IEnumerator ResetGameAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+
+        // Reset values
+        GameProperties.healthPoints = 3;
+        GameProperties.objectMoveSpeed = 5f;
+        ScoreUpdate.score = 0;
+        ScoreUpdate.gameEnded = false;
+        WaterDrag.terminate = false;
+        RockSpawner.spawnRocks = true;
+        coinSpawner.spawnCoins = true;
+        CrocodileSpawner.spawnCrocodiles = true;
+        LogSpawn.spawnLogs = true;
+        ScrollingBackground.scrollSpeed = 2f; // or your default
+        coinMovement.moveSpeed = 3f; // or your default
+        LogMovement.moveSpeed = 3f; // or your default
+
+        // Reload the game scene
+        SceneManager.LoadScene("Game");
+    }
+
+    System.Collections.IEnumerator LoadGameSceneAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(2f); // Wait 2 real-world seconds
+        SceneManager.LoadScene("Game");
     }
 }
