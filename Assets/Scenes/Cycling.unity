@@ -607,8 +607,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effects: {fileID: 0}
   rockCollisionSound: {fileID: 8300000, guid: 89880374dc80a8c42b6d9b1747a41dc6, type: 3}
-  gameOverSound: {fileID: 0}
-  backgroundMusic: {fileID: 0}
+  gameOverSound: {fileID: 8300000, guid: 96b8e65352897b24dab85a463bbe0e45, type: 3}
+  backgroundMusic: {fileID: 1835689628}
 --- !u!114 &74101053
 MonoBehaviour:
   m_ObjectHideFlags: 0
