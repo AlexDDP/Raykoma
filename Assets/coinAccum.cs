@@ -47,6 +47,6 @@ public class coinAccum : MonoBehaviour
 
     private void UpdateCoinsUI()
     {
-        coinsText.text = "Coins: " + coins;  // Update the UI text
+        coinsText.text = "" + coins;  // Update the UI text
     }
 }

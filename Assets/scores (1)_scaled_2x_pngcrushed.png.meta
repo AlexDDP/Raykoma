@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 877364fc75c5e0043872c97b76f8bada
+guid: b2a37db7f482b0842b84a8cc36c4885e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4382339788487274730
-    second: scores_0
+      213: -6676534555141024695
+    second: scores (1)_scaled_2x_pngcrushed_0
   - first:
-      213: 3787984777858363902
-    second: scores_1
+      213: 1287227994681842739
+    second: scores (1)_scaled_2x_pngcrushed_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,45 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scores_0
+      name: scores (1)_scaled_2x_pngcrushed_0
       rect:
         serializedVersion: 2
-        x: 80
-        y: 453
-        width: 535
-        height: 67
+        x: 391
+        y: 901
+        width: 732
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61fc7265e2dce23c0800000000000000
-      internalID: -4382339788487274730
+      spriteID: 944d236223f2853a0800000000000000
+      internalID: -6676534555141024695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scores_1
+      name: scores (1)_scaled_2x_pngcrushed_1
       rect:
         serializedVersion: 2
-        x: 294
-        y: 413
-        width: 151
-        height: 39
+        x: 593
+        y: 818
+        width: 300
+        height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef1b5daf510a19430800000000000000
-      internalID: 3787984777858363902
+      spriteID: 33c13f78a072dd110800000000000000
+      internalID: 1287227994681842739
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e22192377b9700344aebe48003aba698
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      scores_0: -4382339788487274730
-      scores_1: 3787984777858363902
+      scores (1)_scaled_2x_pngcrushed_0: -6676534555141024695
+      scores (1)_scaled_2x_pngcrushed_1: 1287227994681842739
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
