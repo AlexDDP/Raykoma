@@ -19,4 +19,10 @@ public class GameManagerScript : MonoBehaviour
     public void ExitButton() {
         SceneManager.LoadSceneAsync("Main Menu");
     }
+
+    public GameObject gameSelectUI;
+
+    public void Select() {
+        gameSelectUI.SetActive(true);
+    }
 }

@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         // Change "Game" to "SampleScene" to match the actual scene name
-        SceneManager.LoadSceneAsync("SampleScene");
+        gameManager.gameSelectUI();;
     }
     public void OpenSettings()
     {
