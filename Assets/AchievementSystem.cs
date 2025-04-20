@@ -26,6 +26,10 @@ public class AchievementSystem : MonoBehaviour
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI descriptionText;
 
+    [Header("Sound")]
+    public AudioClip achievementSound;
+    private AudioSource audioSource;
+
     void Awake()
     {
         if (Instance == null)
@@ -41,6 +45,12 @@ public class AchievementSystem : MonoBehaviour
         if (popupPanel != null)
         {
             popupPanel.SetActive(false);
+        }
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
         }
     }
 
@@ -65,7 +75,6 @@ public class AchievementSystem : MonoBehaviour
             new Achievement { id = "croco1", title = "Crocodile Survivor I", description = "Survive 10 crocodile hits", targetProgress = 10, rewardCoins = 25 },
             new Achievement { id = "croco2", title = "Crocodile Survivor II", description = "Survive 25 crocodile hits", targetProgress = 25, rewardCoins = 50 },
             new Achievement { id = "croco3", title = "Crocodile Survivor III", description = "Survive 45 crocodile hits", targetProgress = 45, rewardCoins = 75 },
-
         };
     }
 
@@ -104,6 +113,12 @@ public class AchievementSystem : MonoBehaviour
         titleText.text = achievement.title;
         descriptionText.text = achievement.description + $" (+{achievement.rewardCoins} coins)";
         popupPanel.SetActive(true);
+
+        // Play sound
+        if (achievementSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(achievementSound);
+        }
 
         CancelInvoke(nameof(HidePopup));
         Invoke(nameof(HidePopup), 3f);
