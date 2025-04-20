@@ -378,7 +378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -385.57025, y: -240}
+  m_AnchoredPosition: {x: -352.44, y: -251}
   m_SizeDelta: {x: 350.8594, y: 129.4059}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &297742527
@@ -511,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 349, y: -240}
+  m_AnchoredPosition: {x: 364, y: -251}
   m_SizeDelta: {x: 350.8594, y: 129.4059}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400256515
@@ -886,7 +886,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupTextObject: {fileID: 906692288}
   popupText: {fileID: 906692289}
-  selectButton: {fileID: 297742527}
+  selectButtons:
+  - {fileID: 297742527}
+  - {fileID: 400256515}
   costs: 0a00000000000000
 --- !u!4 &672056730
 Transform:
@@ -1284,8 +1286,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 588, y: -176}
-  m_SizeDelta: {x: 909.2654, y: 198}
+  m_AnchoredPosition: {x: 383, y: -94.764}
+  m_SizeDelta: {x: 514.8865, y: 98.297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1012863817
 MonoBehaviour:
@@ -2037,8 +2039,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54, y: -176}
-  m_SizeDelta: {x: 909.2654, y: 198}
+  m_AnchoredPosition: {x: -334.18, y: -96.45}
+  m_SizeDelta: {x: 314.33, y: 101.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099000707
 MonoBehaviour:

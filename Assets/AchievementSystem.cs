@@ -11,13 +11,14 @@ public class AchievementSystem : MonoBehaviour
         public string title;
         public string description;
         public bool isUnlocked;
-        public int progress; // For tracking progress (e.g., number of rocks hit)
-        public int targetProgress; // Target goal (e.g., hit 10 rocks)
+        public int progress;
+        public int targetProgress;
+        public int rewardCoins;
     }
 
     public static AchievementSystem Instance;
 
-    [Header("Achievement List")]
+    [Header("Achievement List (auto-filled)")]
     public List<Achievement> achievements = new List<Achievement>();
 
     [Header("UI Elements")]
@@ -30,47 +31,65 @@ public class AchievementSystem : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject); // Keep across scenes
         }
         else
         {
             Destroy(gameObject);
         }
 
-        // Load achievement progress from PlayerPrefs
-        LoadAchievements();
-
-        // Ensure popup is hidden on start
         if (popupPanel != null)
         {
             popupPanel.SetActive(false);
         }
     }
 
+    void Start()
+    {
+        if (achievements.Count == 0)
+        {
+            AddCollisionBasedAchievements();
+        }
+
+        LoadAchievements();
+    }
+
+    void AddCollisionBasedAchievements()
+    {
+        achievements = new List<Achievement>
+        {
+            new Achievement { id = "rock1", title = "Rock Survivor I", description = "Survive 10 rock hits", targetProgress = 10, rewardCoins = 50 },
+            new Achievement { id = "rock2", title = "Rock Survivor II", description = "Survive 30 rock hits", targetProgress = 30, rewardCoins = 100 },
+            new Achievement { id = "rock3", title = "Rock Survivor III", description = "Survive 50 rock hits", targetProgress = 50, rewardCoins = 150 },
+
+            new Achievement { id = "croco1", title = "Crocodile Survivor I", description = "Survive 10 crocodile hits", targetProgress = 10, rewardCoins = 25 },
+            new Achievement { id = "croco2", title = "Crocodile Survivor II", description = "Survive 25 crocodile hits", targetProgress = 25, rewardCoins = 50 },
+            new Achievement { id = "croco3", title = "Crocodile Survivor III", description = "Survive 45 crocodile hits", targetProgress = 45, rewardCoins = 75 },
+
+        };
+    }
+
     public void Unlock(string id)
     {
-        Debug.Log($"Trying to unlock achievement with ID: {id}");
-
         Achievement achievement = achievements.Find(a => a.id == id);
-        if (achievement == null)
-        {
-            Debug.LogWarning($"Achievement ID not found: {id}");
+        if (achievement == null || achievement.isUnlocked)
             return;
-        }
 
-        if (achievement.isUnlocked)
-        {
-            Debug.Log($"Achievement '{achievement.title}' already unlocked.");
-            return;
-        }
-
-        // Track progress and unlock if target is met
         achievement.progress++;
 
         if (achievement.progress >= achievement.targetProgress)
         {
             achievement.isUnlocked = true;
-            SaveAchievements(); // Save progress
+
+            int currentCoins = PlayerPrefs.GetInt("Coins", 0);
+            currentCoins += achievement.rewardCoins;
+            PlayerPrefs.SetInt("Coins", currentCoins);
+            PlayerPrefs.Save();
+
+            SaveAchievements();
             ShowPopup(achievement);
+
+            Debug.Log($"Unlocked: {achievement.title} (+{achievement.rewardCoins} coins)");
         }
     }
 
@@ -78,12 +97,12 @@ public class AchievementSystem : MonoBehaviour
     {
         if (popupPanel == null || titleText == null || descriptionText == null)
         {
-            Debug.LogError("UI elements not assigned in the inspector!");
+            Debug.LogError("UI elements not assigned!");
             return;
         }
 
         titleText.text = achievement.title;
-        descriptionText.text = achievement.description;
+        descriptionText.text = achievement.description + $" (+{achievement.rewardCoins} coins)";
         popupPanel.SetActive(true);
 
         CancelInvoke(nameof(HidePopup));
@@ -98,26 +117,22 @@ public class AchievementSystem : MonoBehaviour
         }
     }
 
-    // Save all achievements and progress to PlayerPrefs
     void SaveAchievements()
     {
-        foreach (var achievement in achievements)
+        foreach (var a in achievements)
         {
-            PlayerPrefs.SetInt(achievement.id + "_progress", achievement.progress);
-            PlayerPrefs.SetInt(achievement.id + "_unlocked", achievement.isUnlocked ? 1 : 0);
+            PlayerPrefs.SetInt(a.id + "_progress", a.progress);
+            PlayerPrefs.SetInt(a.id + "_unlocked", a.isUnlocked ? 1 : 0);
         }
         PlayerPrefs.Save();
-        Debug.Log("Achievements saved.");
     }
 
-    // Load achievement progress from PlayerPrefs
     void LoadAchievements()
     {
-        foreach (var achievement in achievements)
+        foreach (var a in achievements)
         {
-            achievement.progress = PlayerPrefs.GetInt(achievement.id + "_progress", 0);
-            achievement.isUnlocked = PlayerPrefs.GetInt(achievement.id + "_unlocked", 0) == 1;
+            a.progress = PlayerPrefs.GetInt(a.id + "_progress", 0);
+            a.isUnlocked = PlayerPrefs.GetInt(a.id + "_unlocked", 0) == 1;
         }
-        Debug.Log("Achievements loaded.");
     }
 }

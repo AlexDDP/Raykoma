@@ -50,6 +50,7 @@ public class BoatCollision : MonoBehaviour
                 SceneManager.LoadSceneAsync("Running");
             else if (sceneName == "Running")
                 SceneManager.LoadSceneAsync("EndingScene");
+
         }
 
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
@@ -58,11 +59,15 @@ public class BoatCollision : MonoBehaviour
             //if (GameProperties.healthPoints <= 0)
             if (collision.gameObject.CompareTag("Rock"))
             {
-                //AchievementSystem.Instance.Unlock("hit_rock");
+                StartCoroutine(HandleRockCollisionAchievements());
                 audioSource.PlayOneShot(rockCollisionSound);
             }
+            if (collision.gameObject.CompareTag("Crocodile"))
+            {
+                StartCoroutine(HandleCrocodileCollisionAchievements());
+            }
 
-            if (GameProperties.healthPoints <= 0)
+                if (GameProperties.healthPoints <= 0)
             {
                 audioSource.PlayOneShot(gameOverSound);
                 ScoreUpdate.gameEnded = true;
@@ -140,5 +145,21 @@ public class BoatCollision : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(2f); // Wait 2 real-world seconds
         SceneManager.LoadScene("Game");
+    }
+
+    System.Collections.IEnumerator HandleRockCollisionAchievements()
+    {
+        yield return null; // Wait one frame
+        AchievementSystem.Instance.Unlock("rock1");
+        AchievementSystem.Instance.Unlock("rock2");
+        AchievementSystem.Instance.Unlock("rock3");
+    }
+
+    System.Collections.IEnumerator HandleCrocodileCollisionAchievements()
+    {
+        yield return null;
+        AchievementSystem.Instance.Unlock("croco1");
+        AchievementSystem.Instance.Unlock("croco2");
+        AchievementSystem.Instance.Unlock("croco3");
     }
 }
