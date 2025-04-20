@@ -1717,6 +1717,7 @@ MonoBehaviour:
   popupPanel: {fileID: 463397076}
   titleText: {fileID: 1088725298}
   descriptionText: {fileID: 1379434620}
+  achievementSound: {fileID: 8300000, guid: 8dd4b50df23625d4abc11d10b257509d, type: 3}
 --- !u!4 &937225255
 Transform:
   m_ObjectHideFlags: 0
