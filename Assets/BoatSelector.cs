@@ -1,68 +1,67 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class BoatSelectorUI : MonoBehaviour
 {
-    public Button selectButton;        // The button to select the boat
-    public int[] costs = { 10, 0 };    // Cost for each boat (boatIndex 0 = 10 coins, boatIndex 1 = 0 coins)
+    public GameObject popupTextObject;
+    public TextMeshProUGUI popupText;
 
-    // Function to set the button interactability based on coins
+    public Button[] selectButtons;
+    public int[] costs = { 100, 0 }; // Match number of boats
+
     void Start()
     {
-        // Get the boat index (you can set this dynamically for each boat)
-        int boatIndex = PlayerPrefs.GetInt("SelectedBoatIndex", 1);  // Default to 1 if no selection
-
-        // Get the cost of the selected boat based on boatIndex
-        int boatCost = costs[boatIndex];
-
-        // Check if the player has enough coins to select the boat
-        if (PlayerPrefs.GetInt("Coins", 0) >= boatCost)
+        // Set up all buttons, regardless of affordability
+        for (int i = 0; i < selectButtons.Length; i++)
         {
-            selectButton.interactable = true; // Enable the button
-        }
-        else
-        {
-            selectButton.interactable = false; // Disable the button
+            int index = i; // Needed to capture correct index inside listener
+            selectButtons[i].onClick.RemoveAllListeners();
+            selectButtons[i].onClick.AddListener(() => SelectBoat(index));
+            selectButtons[i].interactable = true; // Always clickable
         }
     }
 
-    // Function to select the boat
     public void SelectBoat(int boatIndex)
     {
         int currentCoins = PlayerPrefs.GetInt("Coins", 0);
-        int boatCost = costs[boatIndex];  // Get the cost of the selected boat
+        int boatCost = costs[boatIndex];
 
-        // Check if the player has enough coins to select the boat
         if (currentCoins >= boatCost)
         {
-            // Deduct coins for the boat
             currentCoins -= boatCost;
-            PlayerPrefs.SetInt("Coins", currentCoins);  // Update the coin balance in PlayerPrefs
-            PlayerPrefs.Save();
-
-            // Save the selected boat index
+            PlayerPrefs.SetInt("Coins", currentCoins);
             PlayerPrefs.SetInt("SelectedBoatIndex", boatIndex);
             PlayerPrefs.Save();
 
-            Debug.Log("Boat Selected! Coins Remaining: " + currentCoins);
-            // Load the game scene or transition
+            ShowPopup("Purchase Successful!");
             SceneManager.LoadScene("SampleScene");
         }
         else
         {
-            Debug.Log("Not enough coins to select this boat!");
-            // Optionally, show a UI message here to inform the player
+            ShowPopup("Not enough coins!");
         }
     }
 
-    // Call this function when you want to reset PlayerPrefs (e.g., on button click)
+    void ShowPopup(string message)
+    {
+        popupText.text = message;
+        popupTextObject.SetActive(true);
+        CancelInvoke(nameof(HidePopup));
+        Invoke(nameof(HidePopup), 2f);
+    }
+
+    void HidePopup()
+    {
+        popupTextObject.SetActive(false);
+    }
+
     public void ResetAllData()
     {
-        PlayerPrefs.DeleteAll(); // Clears all saved PlayerPrefs data
-        PlayerPrefs.Save(); // Save the changes to PlayerPrefs (optional)
+        PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("SelectedBoatIndex", 1);
-        PlayerPrefs.Save();  // Save the changes to PlayerPrefs
+        PlayerPrefs.Save();
         Debug.Log("PlayerPrefs have been reset.");
     }
 }

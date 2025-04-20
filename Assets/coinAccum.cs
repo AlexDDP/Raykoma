@@ -28,6 +28,8 @@ public class coinAccum : MonoBehaviour
             PlayerPrefs.SetInt("Coins", coins);
             PlayerPrefs.Save();
 
+            //AchievementSystem.Instance.Unlock("collect_coin");
+
             // Play coin sound if available
             if (audioSource != null && coinSound != null)
             {
@@ -45,6 +47,6 @@ public class coinAccum : MonoBehaviour
 
     private void UpdateCoinsUI()
     {
-        coinsText.text = "Coins: " + coins;  // Update the UI text
+        coinsText.text = "" + coins;  // Update the UI text
     }
 }

@@ -8,19 +8,17 @@ using UnityEngine.SceneManagement;
 
 public class BoatCollision : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public static int lifeCount = 3;
     public GameObject effects;
     public AudioClip rockCollisionSound;
     public AudioClip gameOverSound;
     private AudioSource audioSource;
+
     public AudioSource backgroundMusic;
 
     public static bool isGameOver = false;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -28,8 +26,6 @@ public class BoatCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("FinishLine"))
         {
-            SceneManager.LoadSceneAsync("Cycling");
-            GameProperties.healthPoints = 3;
             //audioSource.PlayOneShot(gameOverSound);
             //ScoreUpdate.gameEnded = true;
             //WaterDrag.terminate = true;
@@ -44,19 +40,34 @@ public class BoatCollision : MonoBehaviour
             //{
             //    backgroundMusic.Stop();  // Stop the background music from playing
             //}
+            GameProperties.healthPoints = 3;
+            GameProperties.objectMoveSpeed = 5f;
+            string sceneName = SceneManager.GetActiveScene().name;
             Destroy(collision.gameObject);
+            if (sceneName == "SampleScene")
+                SceneManager.LoadSceneAsync("Cycling");
+            else if (sceneName == "Cycling")
+                SceneManager.LoadSceneAsync("Running");
+            else if (sceneName == "Running")
+                SceneManager.LoadSceneAsync("EndingScene");
 
         }
+
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Crocodile"))
         {
             GameProperties.healthPoints--;
+            //if (GameProperties.healthPoints <= 0)
             if (collision.gameObject.CompareTag("Rock"))
             {
+                StartCoroutine(HandleRockCollisionAchievements());
                 audioSource.PlayOneShot(rockCollisionSound);
             }
+            if (collision.gameObject.CompareTag("Crocodile"))
+            {
+                StartCoroutine(HandleCrocodileCollisionAchievements());
+            }
 
-            lifeCount--;
-            if (lifeCount <= 0)
+                if (GameProperties.healthPoints <= 0)
             {
                 audioSource.PlayOneShot(gameOverSound);
                 ScoreUpdate.gameEnded = true;
@@ -73,36 +84,82 @@ public class BoatCollision : MonoBehaviour
                 {
                     backgroundMusic.Stop();  // Stop the background music from playing
                 }
+                StartCoroutine(ResetGameAfterDelay()); // changed from LoadGameSceneAfterDelay
             }
 
             Destroy(collision.gameObject);
         }
 
-        GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
+        //GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
 
-        // Get the ParticleSystem component and play it
-        ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
-        if (ps != null)
-        {
-            ps.Play(); // Manually play the particle effect
-        }
+        //    // Get the ParticleSystem component and play it
+        //    ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
+        //    if (ps != null)
+        //    {
+        //        ps.Play(); // Manually play the particle effect
+        //    }
 
-        // Destroy the effect after it's done playing
-        Destroy(effectInstance, ps.main.duration);
-        //marwans line of code(uknknown purpose but it works)
-        rb.angularVelocity = 0f;
+        //    // Destroy the effect after it's done playing
+        //    Destroy(effectInstance, ps.main.duration);
+        //    //marwans line of code(uknknown purpose but it works)
+        //    rb.angularVelocity = 0f;
+        //}
+
+
+        //// Function to disable all CrocodileMovement components in the scene
+        //private void DisableCrocodileMovement()
+        //{
+        //    // Find all objects with the CrocodileMovement script and disable the script
+        //    CrocodileMovement[] crocodileMovements = FindObjectsOfType<CrocodileMovement>();
+        //    foreach (CrocodileMovement crocodileMovement in crocodileMovements)
+        //    {
+        //        // Disable the component to stop crocodile movement
+        //        crocodileMovement.enabled = false;
+        //    }
+        //}
     }
 
+    System.Collections.IEnumerator ResetGameAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(2f);
 
-    //// Function to disable all CrocodileMovement components in the scene
-    //private void DisableCrocodileMovement()
-    //{
-    //    // Find all objects with the CrocodileMovement script and disable the script
-    //    CrocodileMovement[] crocodileMovements = FindObjectsOfType<CrocodileMovement>();
-    //    foreach (CrocodileMovement crocodileMovement in crocodileMovements)
-    //    {
-    //        // Disable the component to stop crocodile movement
-    //        crocodileMovement.enabled = false;
-    //    }
-    //}
+        // Reset values
+        GameProperties.healthPoints = 3;
+        GameProperties.objectMoveSpeed = 5f;
+        ScoreUpdate.score = 0;
+        ScoreUpdate.gameEnded = false;
+        WaterDrag.terminate = false;
+        RockSpawner.spawnRocks = true;
+        coinSpawner.spawnCoins = true;
+        CrocodileSpawner.spawnCrocodiles = true;
+        LogSpawn.spawnLogs = true;
+        ScrollingBackground.scrollSpeed = 2f; // or your default
+        coinMovement.moveSpeed = 3f; // or your default
+        LogMovement.moveSpeed = 3f; // or your default
+
+        // Reload the game scene
+        SceneManager.LoadScene("Game");
+    }
+
+    System.Collections.IEnumerator LoadGameSceneAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(2f); // Wait 2 real-world seconds
+        SceneManager.LoadScene("Game");
+    }
+
+    System.Collections.IEnumerator HandleRockCollisionAchievements()
+    {
+        yield return null; // Wait one frame
+        AchievementSystem.Instance.Unlock("rock1");
+        AchievementSystem.Instance.Unlock("rock2");
+        AchievementSystem.Instance.Unlock("rock3");
+    }
+
+    System.Collections.IEnumerator HandleCrocodileCollisionAchievements()
+    {
+        yield return null;
+        AchievementSystem.Instance.Unlock("croco1");
+        AchievementSystem.Instance.Unlock("croco2");
+        AchievementSystem.Instance.Unlock("croco3");
+    }
 }
