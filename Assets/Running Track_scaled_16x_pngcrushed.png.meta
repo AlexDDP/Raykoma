@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Running Track_scaled_16x_pngcrushed_0: -1784204537994001181
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

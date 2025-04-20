@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65df13f90999a57428eba885e6ed4615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effects: {fileID: 0}
+  effects: {fileID: 1515026331}
   rockCollisionSound: {fileID: 8300000, guid: 89880374dc80a8c42b6d9b1747a41dc6, type: 3}
   gameOverSound: {fileID: 8300000, guid: 96b8e65352897b24dab85a463bbe0e45, type: 3}
   backgroundMusic: {fileID: 1835689628}
@@ -1717,6 +1717,7 @@ MonoBehaviour:
   popupPanel: {fileID: 463397076}
   titleText: {fileID: 1088725298}
   descriptionText: {fileID: 1379434620}
+  achievementSound: {fileID: 8300000, guid: 8dd4b50df23625d4abc11d10b257509d, type: 3}
 --- !u!4 &937225255
 Transform:
   m_ObjectHideFlags: 0
