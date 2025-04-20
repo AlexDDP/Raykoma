@@ -57,6 +57,17 @@ public class BoatCollision : MonoBehaviour
         {
             GameProperties.healthPoints--;
             //if (GameProperties.healthPoints <= 0)
+            GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
+
+            // Get the ParticleSystem component and play it
+              ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
+                if (ps != null){
+                    ps.Play(); // Manually play the particle effect
+                }
+
+                // Destroy the effect after it's done playing
+                Destroy(effectInstance, ps.main.duration);
+
             if (collision.gameObject.CompareTag("Rock"))
             {
                 StartCoroutine(HandleRockCollisionAchievements());
@@ -90,20 +101,7 @@ public class BoatCollision : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        //GameObject effectInstance = Instantiate(effects, transform.position, Quaternion.identity);
 
-        //    // Get the ParticleSystem component and play it
-        //    ParticleSystem ps = effectInstance.GetComponent<ParticleSystem>();
-        //    if (ps != null)
-        //    {
-        //        ps.Play(); // Manually play the particle effect
-        //    }
-
-        //    // Destroy the effect after it's done playing
-        //    Destroy(effectInstance, ps.main.duration);
-        //    //marwans line of code(uknknown purpose but it works)
-        //    rb.angularVelocity = 0f;
-        //}
 
 
         //// Function to disable all CrocodileMovement components in the scene

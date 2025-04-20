@@ -409,7 +409,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hearts_scaled_2x_pngcrushed_0: -5850785107731635716
+      hearts_scaled_2x_pngcrushed_1: 8615142246115019707
+      hearts_scaled_2x_pngcrushed_10: -3318607425649927421
+      hearts_scaled_2x_pngcrushed_11: 218877678083102973
+      hearts_scaled_2x_pngcrushed_2: -5407947961966561919
+      hearts_scaled_2x_pngcrushed_3: -2949037832472798589
+      hearts_scaled_2x_pngcrushed_4: -6783851600607552951
+      hearts_scaled_2x_pngcrushed_5: 8425796379461700828
+      hearts_scaled_2x_pngcrushed_6: -4434933893712783665
+      hearts_scaled_2x_pngcrushed_7: 2969164241196631661
+      hearts_scaled_2x_pngcrushed_8: 8771571957308581058
+      hearts_scaled_2x_pngcrushed_9: -7211196236476255918
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bird_scaled_11x_pngcrushed_0: -7158390478863668248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bicycle (1)_scaled_15x_pngcrushed_0: 4852814424847366308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
