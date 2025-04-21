@@ -709,8 +709,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boatSprites:
-  - {fileID: 636163207994489355, guid: a0218c59835ebe44bb33d1c7fd69461d, type: 3}
   - {fileID: -4187383797145547557, guid: a026c622091904e479c8194ccf0bc79c, type: 3}
+  - {fileID: 636163207994489355, guid: a0218c59835ebe44bb33d1c7fd69461d, type: 3}
+  - {fileID: -8376614293265873791, guid: ff31bcb414d8ea74bbdae1da805481bc, type: 3}
   mainBoatRenderer: {fileID: 74101041}
 --- !u!114 &74101052
 MonoBehaviour:
@@ -2475,6 +2476,7 @@ MonoBehaviour:
   popupPanel: {fileID: 316328405}
   titleText: {fileID: 553244979}
   descriptionText: {fileID: 1719293962}
+  achievementSound: {fileID: 0}
 --- !u!4 &1418285403
 Transform:
   m_ObjectHideFlags: 0
