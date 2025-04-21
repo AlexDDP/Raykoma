@@ -1,46 +1,54 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Make sure this is included
+using UnityEngine.SceneManagement;
 
 public class SettingsManager : MonoBehaviour
 {
-    public Slider volumeSlider;    // Volume slider UI element
-    public Toggle fullscreenToggle; // Fullscreen toggle UI element
+    public Slider volumeSlider;          // Reference to volume slider
+    public Toggle fullscreenToggle;      // Reference to fullscreen toggle
 
     void Start()
     {
-        // Set the initial values based on current game settings
-        volumeSlider.value = AudioListener.volume;
-        fullscreenToggle.isOn = Screen.fullScreen;
+        // Load saved volume or default to 1
+        float savedVolume = PlayerPrefs.GetFloat("Volume", 1f);
+        volumeSlider.value = savedVolume;
 
-        // Add listeners to handle changes
-        volumeSlider.onValueChanged.AddListener(SetVolume);
+        // Load saved fullscreen setting or fallback to current state
+        int savedFullscreen = PlayerPrefs.GetInt("Fullscreen", Screen.fullScreen ? 1 : 0);
+        bool isFullscreen = (savedFullscreen == 1);
+        fullscreenToggle.isOn = isFullscreen;
+        Screen.fullScreen = isFullscreen;
+
+        // Add listener only for fullscreen (real-time)
         fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
     }
 
-    // Method to set the volume based on the slider
-    public void SetVolume(float volume)
-    {
-        AudioListener.volume = volume; // Set the global audio volume
-    }
-
-    // Method to toggle fullscreen mode
-    public void SetFullscreen(bool isFullscreen)
-    {
-        Screen.fullScreen = isFullscreen; // Set fullscreen mode
-    }
-
-    // Method to apply and save settings (optional)
+    // Applies the volume setting only when "Apply" button is clicked
     public void ApplySettings()
     {
-        // You can save settings to PlayerPrefs or a file here if needed
-        // Example: PlayerPrefs.SetFloat("Volume", AudioListener.volume);
-        // Example: PlayerPrefs.SetInt("Fullscreen", Screen.fullScreen ? 1 : 0);
+        float newVolume = volumeSlider.value;
+        AudioListener.volume = newVolume;
+
+        PlayerPrefs.SetFloat("Volume", newVolume);
+        PlayerPrefs.Save();
+
+        Debug.Log("Volume applied and saved.");
     }
 
-    // Method to go back to the main menu
+    // Applies fullscreen immediately when toggle is changed
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+
+        PlayerPrefs.SetInt("Fullscreen", isFullscreen ? 1 : 0);
+        PlayerPrefs.Save();
+
+        Debug.Log("Fullscreen setting applied immediately.");
+    }
+
+    
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("Main Menu"); // Replace with your actual main menu scene name
+        SceneManager.LoadScene("Main Menu");
     }
 }
