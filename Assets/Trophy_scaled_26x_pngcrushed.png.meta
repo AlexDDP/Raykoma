@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Trophy_scaled_26x_pngcrushed_0: 8591245709139107490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
