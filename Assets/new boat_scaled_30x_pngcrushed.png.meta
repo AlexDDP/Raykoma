@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      new boat_scaled_30x_pngcrushed_0: -7982948003365546837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
