@@ -39,4 +39,12 @@ public class MainMenu : MonoBehaviour
     public void Running() {
         SceneManager.LoadSceneAsync("Running");
     }
+
+    public GameObject Selection2;
+    
+    public void OpenSelection2() {
+        if (Selection2 != null) {
+           Selection2.SetActive(true); 
+        }
+    }
 }
