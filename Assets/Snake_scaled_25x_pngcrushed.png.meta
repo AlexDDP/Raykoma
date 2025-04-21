@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 192ca85effd1dc448ac7cc15807a69b4
+guid: 83bbb23c00abc504991efa68a88efb06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4990830818651469247
-    second: store page_0
+      213: -8128514836988345394
+    second: Snake_scaled_25x_pngcrushed_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: store page_0
+      name: Snake_scaled_25x_pngcrushed_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 22677
-        height: 12756
+        x: 124
+        y: 274
+        width: 502
+        height: 277
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb5facfdf2ef24540800000000000000
-      internalID: 4990830818651469247
+      spriteID: ec341dd82d6b13f80800000000000000
+      internalID: -8128514836988345394
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      store page_0: 4990830818651469247
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
