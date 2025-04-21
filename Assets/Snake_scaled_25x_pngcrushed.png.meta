@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Snake_scaled_25x_pngcrushed_0: -8128514836988345394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
