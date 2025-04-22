@@ -17,6 +17,7 @@ public class ScoreUpdate : MonoBehaviour
     public string scoreTextString;
     void Start()
     {
+        scoreText.text = score.ToString();
         timer = timeTilUpdate;
         filePath = Application.dataPath + "/highScore.txt"; // Saves inside Assets folder
         LoadHighScore();
@@ -35,6 +36,7 @@ public class ScoreUpdate : MonoBehaviour
             SaveHighScore(score);
         }
         timer -= Time.deltaTime;
+        
     }
 
     public void SaveHighScore(int score)
@@ -51,9 +53,22 @@ public class ScoreUpdate : MonoBehaviour
         if (File.Exists(filePath))
         {
             scoreTextString = File.ReadAllText(filePath);
-            if(!string.IsNullOrEmpty(scoreTextString)) highScore = int.Parse(scoreTextString);
-            else highScore = 0;
+            if (!string.IsNullOrEmpty(scoreTextString))
+            {
+                highScore = int.Parse(scoreTextString);
+            }
+            else
+            {
+                highScore = 0;
+            }
         }
+        else
+        {
+            highScore = 0;
+        }
+
+        scoreTextString = highScore.ToString();
+        highScoreText.text = scoreTextString;
 
     }
 }
