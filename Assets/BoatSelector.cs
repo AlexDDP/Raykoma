@@ -85,6 +85,8 @@ public class BoatSelectorUI : MonoBehaviour
         PlayerPrefs.Save();
         Debug.Log("PlayerPrefs have been reset.");
     }
-   
+    
+
+
 
 }
