@@ -711,7 +711,7 @@ MonoBehaviour:
   boatSprites:
   - {fileID: -4187383797145547557, guid: a026c622091904e479c8194ccf0bc79c, type: 3}
   - {fileID: 636163207994489355, guid: a0218c59835ebe44bb33d1c7fd69461d, type: 3}
-  - {fileID: -7982948003365546837, guid: 24bfa7c70df308f4fa6d64c50d6f23b9, type: 3}
+  - {fileID: 8865955349675699025, guid: 7af3523d9c4ea0f49b21457159ff99b4, type: 3}
   mainBoatRenderer: {fileID: 74101041}
 --- !u!114 &74101052
 MonoBehaviour:
