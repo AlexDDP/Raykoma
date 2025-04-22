@@ -56,10 +56,10 @@ public class AchievementSystem : MonoBehaviour
 
     void Start()
     {
-        if (achievements.Count == 0)
-        {
+        //if (achievements.Count == 0)
+        //{
             AddCollisionBasedAchievements();
-        }
+       // }
 
         LoadAchievements();
     }
@@ -85,6 +85,9 @@ public class AchievementSystem : MonoBehaviour
             return;
 
         achievement.progress++;
+
+        PlayerPrefs.SetInt(achievement.id + "_progress", achievement.progress);
+        PlayerPrefs.Save();
 
         if (achievement.progress >= achievement.targetProgress)
         {
