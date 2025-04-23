@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7af3523d9c4ea0f49b21457159ff99b4
+guid: 9597356d30742b4478b2bb4dfaa10a4a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8865955349675699025
-    second: NEW BOAT FINAL_0
+      213: 7946384391254294177
+    second: logoRush_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NEW BOAT FINAL_0
+      name: logoRush_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 59
-        width: 686
-        height: 650
+        x: 0
+        y: 0
+        width: 359
+        height: 359
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 15be4ebaa633a0b70800000000000000
-      internalID: 8865955349675699025
+      spriteID: 1aebb69808a374e60800000000000000
+      internalID: 7946384391254294177
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      NEW BOAT FINAL_0: 8865955349675699025
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
